@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+    oai-gnb-cu:
+        image: docker.io/oaisoftwarealliance/oai-gnb:develop
+        privileged: true
+        container_name: cu-oai
+        environment:
+            USE_B2XX: 'yes'
+            USE_ADDITIONAL_OPTIONS: --sa -E --continuous-tx
+        volumes:
+          - ./cu.conf:/opt/oai-gnb/etc/gnb.conf
+          - /dev:/dev
+        networks:
+          public_net:
+            ipv4_address: 192.168.70.130
+        healthcheck:
+            # pgrep does NOT work
+            test: /bin/bash -c "ps aux | grep -v grep | grep -c softmodem"
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        depends_on:
+          - oai-gnb-du
+
+    oai-gnb-du:
+        image: docker.io/oaisoftwarealliance/oai-gnb:develop
+        privileged: true
+        container_name: du-oai
+        environment:
+            USE_B2XX: 'yes'
+            USE_ADDITIONAL_OPTIONS: --sa -E --continuous-tx
+        volumes:
+          - ./du.conf:/opt/oai-gnb/etc/gnb.conf
+          - /dev:/dev
+        networks:
+            public_net:
+             ipv4_address: 192.168.70.131
+        healthcheck:
+            # pgrep does NOT work
+            test: /bin/bash -c "ps aux | grep -v grep | grep -c softmodem"
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+#    oai-gnb-ue:
+#        image: docker.io/oaisoftwarealliance/oai-nr-ue:develop
+#        privileged: true
+#        container_name: ue-oai
+#        environment:
+#            USE_B2XX: 'yes'
+#            USE_ADDITIONAL_OPTIONS: --sa -E --continuous-tx --rfsim
+#        volumes:
+#          - ./ue.conf:/opt/oai-nr-ue/etc/nr-ue.conf
+#          - /dev:/dev
+#        networks:
+#            public_net:
+#             ipv4_address: 192.168.70.132
+#        healthcheck:
+#            # pgrep does NOT work
+#            test: /bin/bash -c "ps aux | grep -v grep | grep -c softmodem"
+#            interval: 10s
+#            timeout: 5s
+#            retries: 5
+#        depends_on:
+#          - oai-gnb-cu
+#          - oai-gnb-du
+
+
+networks:
+    public_net:
+      driver: bridge
+      name: oai-gnb
+      ipam:
+        config:
+          - subnet: 192.168.70.128/26
+      driver_opts:
+          com.docker.network.bridge.name: "oai-gnb"
