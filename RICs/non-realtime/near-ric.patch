@@ -1,0 +1,124 @@
+diff --git a/new-installer/helm/charts/nearrtric/a1mediator/values.yaml b/new-installer/helm/charts/nearrtric/a1mediator/values.yaml
+index 841bfb2..2f05e8d 100644
+--- a/new-installer/helm/charts/nearrtric/a1mediator/values.yaml
++++ b/new-installer/helm/charts/nearrtric/a1mediator/values.yaml
+@@ -25,7 +25,7 @@ a1mediator:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-a1
+-    tag: 2.5.0
++    tag: 3.1.2
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+ 
+   # Service ports are now defined in
+diff --git a/new-installer/helm/charts/nearrtric/alarmmanager/values.yaml b/new-installer/helm/charts/nearrtric/alarmmanager/values.yaml
+index a3559eb..61041d8 100644
+--- a/new-installer/helm/charts/nearrtric/alarmmanager/values.yaml
++++ b/new-installer/helm/charts/nearrtric/alarmmanager/values.yaml
+@@ -19,7 +19,7 @@ alarmmanager:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-alarmmanager
+-    tag: 0.5.9
++    tag: 0.5.15
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc" #"ranco-dev-tools.eastus.cloudapp.azure.com:10001"
+   dataVolSize: 100Mi
+   storageClassName: local-storage
+diff --git a/new-installer/helm/charts/nearrtric/dbaas/values.yaml b/new-installer/helm/charts/nearrtric/dbaas/values.yaml
+index 4267ebe..afc4b88 100644
+--- a/new-installer/helm/charts/nearrtric/dbaas/values.yaml
++++ b/new-installer/helm/charts/nearrtric/dbaas/values.yaml
+@@ -19,7 +19,7 @@ dbaas:
+   image:
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+     name: ric-plt-dbaas
+-    tag: 0.6.1
++    tag: 0.6.3
+   imagePullPolicy: IfNotPresent
+   enableHighAvailability: false
+   enablePodAntiAffinity: false
+diff --git a/new-installer/helm/charts/nearrtric/e2mgr/values.yaml b/new-installer/helm/charts/nearrtric/e2mgr/values.yaml
+index 2927b6c..15ef74a 100644
+--- a/new-installer/helm/charts/nearrtric/e2mgr/values.yaml
++++ b/new-installer/helm/charts/nearrtric/e2mgr/values.yaml
+@@ -24,7 +24,7 @@ e2mgr:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-e2mgr
+-    tag: 3.0.1
++    tag: 6.0.2
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+ 
+   privilegedmode: false
+diff --git a/new-installer/helm/charts/nearrtric/e2term/values.yaml b/new-installer/helm/charts/nearrtric/e2term/values.yaml
+index ab2681e..168addd 100644
+--- a/new-installer/helm/charts/nearrtric/e2term/values.yaml
++++ b/new-installer/helm/charts/nearrtric/e2term/values.yaml
+@@ -24,7 +24,7 @@ e2term:
+     imagePullPolicy: IfNotPresent
+     image:
+       name: ric-plt-e2
+-      tag: 3.0.1
++      tag: 6.0.3
+       registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+ 
+     privilegedmode: false
+diff --git a/new-installer/helm/charts/nearrtric/o1mediator/values.yaml b/new-installer/helm/charts/nearrtric/o1mediator/values.yaml
+index 79240af..76198e0 100644
+--- a/new-installer/helm/charts/nearrtric/o1mediator/values.yaml
++++ b/new-installer/helm/charts/nearrtric/o1mediator/values.yaml
+@@ -19,7 +19,7 @@ o1mediator:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-o1
+-    tag: 0.3.1
++    tag: 0.6.2
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+ 
+   prometheusAMUrl: "r4-infrastructure-prometheus-alertmanager:80"
+diff --git a/new-installer/helm/charts/nearrtric/rtmgr/values.yaml b/new-installer/helm/charts/nearrtric/rtmgr/values.yaml
+index bfa68dd..d8dfd38 100644
+--- a/new-installer/helm/charts/nearrtric/rtmgr/values.yaml
++++ b/new-installer/helm/charts/nearrtric/rtmgr/values.yaml
+@@ -18,7 +18,7 @@ rtmgr:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-rtmgr
+-    tag: 0.3.8
++    tag: 0.9.5
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+   
+   rpe: rmrpush
+diff --git a/new-installer/helm/charts/nearrtric/submgr/values.yaml b/new-installer/helm/charts/nearrtric/submgr/values.yaml
+index 63aafb6..a189b51 100644
+--- a/new-installer/helm/charts/nearrtric/submgr/values.yaml
++++ b/new-installer/helm/charts/nearrtric/submgr/values.yaml
+@@ -24,7 +24,7 @@ submgr:
+   imagePullPolicy: IfNotPresent
+   image:
+     name: ric-plt-submgr
+-    tag: 0.10.7
++    tag: 0.9.6
+     registry: "nexus3.o-ran-sc.org:10002/o-ran-sc"
+ 
+   replicaCount: 1
+diff --git a/new-installer/helm/charts/nearrtric/values.yaml b/new-installer/helm/charts/nearrtric/values.yaml
+index 9cade85..a91801a 100644
+--- a/new-installer/helm/charts/nearrtric/values.yaml
++++ b/new-installer/helm/charts/nearrtric/values.yaml
+@@ -22,12 +22,12 @@ nearrtric:
+ 
+   # Optional Components
+   # TODO: Document when these optional components are enabled.
+-  installA1Mediator: false
++  installA1Mediator: true
+   installAlarmManager: false
+   installJaegerAdapter: false
+-  installO1Mediator: false
++  installO1Mediator: true
+   installVespamgr: false
+-  installXappOnboarder: false
++  installXappOnboarder: true
+ 
+   # Third Party Components
+   # TODO: Add documentation when these third party components are enabled.

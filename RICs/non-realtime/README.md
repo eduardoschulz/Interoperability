@@ -4,19 +4,14 @@
 
 ### Docker and kubernetes (skip if already installed)
 
-We installed the non rt ric using kubernetes and docker, to do so we used [minikube](https://minikube.sigs.k8s.io/docs/).
+We installed the non rt ric using kubernetes and containers, to do so we used [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) and [containerd](https://containerd.io/).
 
 We've started with a machine running Ubuntu Desktop 22.04 LTS and installed docker following [their own documentation](https://docs.docker.com/engine/install/ubuntu/). 
 
-Then we installed minikube using this:
-```
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-```
+For our cgroup driver we chose systemd. Our configuration file can be found [here](./config.yaml). Make sure to install kubectl as well. As our pod network add-on, we picked [flannel](https://github.com/flannel-io/flannel). Finally we removed the `node-role.kubernetes.io/control-plane:NoSchedule` taint from all nodes.
 
-Then we started our cluster using `sudo minikube start --driver=docker --force`. This will start our cluster.
+Now we should have a healthy kubernetes cluster running so its time to deploy the NearRTRIC itself.
 
-Once the cluster is up we can install kubectl using `sudo minikube kubectl` and now to use kubectl commands all we have to do is type: `sudo minikube kubectl -- <command>`
 
 <!--
 missing details:
