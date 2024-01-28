@@ -1,3 +1,4 @@
+[
 {
 	"start":	{
 		"connected":	[{
@@ -1343,7 +1344,7 @@
 		"receiver_tcp_congestion":	"cubic"
 	},
 	"title":	"srsran-oai"
-}
+},
 {
 	"start":	{
 		"connected":	[{
@@ -2995,7 +2996,7 @@
 		"sender_tcp_congestion":	"cubic"
 	},
 	"title":	"srsran-oai-rev"
-}
+},
 {
 	"start":	{
 		"connected":	[{
@@ -4341,7 +4342,7 @@
 		"receiver_tcp_congestion":	"cubic"
 	},
 	"title":	"srsran-open5gs"
-}
+},
 {
 	"start":	{
 		"connected":	[{
@@ -5994,14 +5995,4 @@
 	},
 	"title":	"srsran-open5gs-rev"
 }
-{
-	"start":	{
-		"connected":	[],
-		"version":	"iperf 3.9",
-		"system_info":	"Linux gnb-du 6.2.0-39-generic #40~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 16 10:53:04 UTC 2 x86_64"
-	},
-	"intervals":	[],
-	"end":	{
-	},
-	"error":	"interrupt - the server has terminated"
-}
+]
