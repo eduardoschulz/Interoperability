@@ -13,7 +13,7 @@ count = len(files)
 fig, ax = plt.subplots(1, count)
 
 def conv(x):
-    return float(x['sum']['bits_per_second'])/1024/1024
+    return float(x['sum']['bits_per_second'])/1_000_000
 
 def from_iter(x):
     print(x['title'].split('-')[1])
