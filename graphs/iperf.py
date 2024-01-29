@@ -4,11 +4,10 @@ import matplotlib as mpl
 import json
 
 mpl.use('QtAgg') 
-NUM_ROWS = 60
-files = ["../logs/iperf-oai.json", "../logs/iperf-srsran.json"]
-labels = [["Open5Gs", "OAI CN"], ["OAI CN", "Open5Gs"]]
-ylim = [(0, 35), (90, 120)]
-titles = ["OAI", "SRSRAN"]
+files = ["../logs/iperf-srsran.json", "../logs/iperf-oai.json"]
+labels = [["OAI CN", "Open5Gs"], ["Open5Gs", "OAI CN"]]
+ylim = [(100, 130), (20, 23)]
+titles = ["SRSRAN", "OAI"]
 count = len(files)
 fig, ax = plt.subplots(1, count)
 
