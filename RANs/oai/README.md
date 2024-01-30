@@ -48,7 +48,6 @@
 
 ```
 
-## OAI on Docker
 
 
 
