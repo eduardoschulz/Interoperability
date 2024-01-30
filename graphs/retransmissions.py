@@ -5,7 +5,7 @@ import json
 
 mpl.use('QtAgg') 
 files = ["../logs/iperf-srsran.json", "../logs/iperf-oai.json"]
-labels = ["OAI CN (SRSRAN)", "Open5Gs (SRSRAN)", "Open5Gs (OAI)", "OAI CN (OAI)"]
+labels = ["SRSRAN (OAI CN)", "SRSRAN (Open5Gs)", "OAI (Open5Gs)", "OAI (OAI CN)"]
 count = len(files)
 ax = plt.subplot()
 values = []
