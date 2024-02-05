@@ -49,4 +49,4 @@ python3 core-networks.py --type stop-basic --scenario 1
 
 ### 3.0 More Information
 
-[Basic Deployment using Docker Compose | https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed/-/blob/master/docs/DEPLOY_SA5G_BASIC_DEPLOYMENT.md]
+[Basic Deployment using Docker Compose](https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed/-/blob/master/docs/DEPLOY_SA5G_BASIC_DEPLOYMENT.md)
