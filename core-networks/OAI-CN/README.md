@@ -1,7 +1,7 @@
 # OAI Core Network
 
 ## 1. Set Up
-
+For our test the version 1.5.0 was used.
 ### 1.1 Core-host Configurations
 ```shell
 sudo sysctl net.ipv4.conf.all.forwarding=1
@@ -11,6 +11,7 @@ sudo iptables -P FORWARD ACCEPT
 ### 1.2 Clone oai-cn5g-fed
 ```shell
 git clone https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed.git
+git checkout v1.5.0
 ```
 
 ### 1.3 Changing Core Settings
