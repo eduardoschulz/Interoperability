@@ -35,7 +35,7 @@ sudo ip route add route 192.168.70.128/26 via {ip_addr_corehost} dev {interface}
 sudo ip route add route 192.168.70.128/26 via 191.4.205.38 dev br01
 ```
 
-### 2.0 Deploying the Core Network
+## 2.0 Deploying the Core Network
 
 + To start the core
 ```shell
@@ -47,6 +47,6 @@ python3 core-networks.py --type start-basic --scenario 1
 python3 core-networks.py --type stop-basic --scenario 1
 ```
 
-### 3.0 More Information
+## 3.0 More Information
 
 [Basic Deployment using Docker Compose](https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed/-/blob/master/docs/DEPLOY_SA5G_BASIC_DEPLOYMENT.md)
