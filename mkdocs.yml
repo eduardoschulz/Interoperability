@@ -2,5 +2,4 @@ site_name: Interoperabilidade
 theme:
   name: material
 
-nav:
-  - Home: index.md
+
