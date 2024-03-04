@@ -10,7 +10,7 @@ ru_sdr:
   device_args: type=b200,ref_locked=internal,clock=internal,pps=internal
     #clock: external                                               # Specify the clock source used by the RF.
     #sync: internal                                                # Specify the sync source used by the RF.
-  srate: 61.44                                                  # RF sample rate might need to be adjusted according to selected bandwidth.
+  srate: 46.08                                                  # RF sample rate might need to be adjusted according to selected bandwidth.
   tx_gain: 70                                                   # Transmit gain of the RF might need to adjusted to the given situation.
     #rx_gain: 70                                                   # Receive gain of the RF might need to adjusted to the given situation.
   otw_format: "sc12"
@@ -18,7 +18,7 @@ ru_sdr:
 cell_cfg:
   dl_arfcn: 622628                                                # ARFCN of the downlink carrier (center frequency).
   band: 78                                                        # The NR band.
-  channel_bandwidth_MHz: 60                                     # Bandwith in MHz. Number of PRBs will be automatically derived.
+  channel_bandwidth_MHz: 40                                     # Bandwith in MHz. Number of PRBs will be automatically derived.
   common_scs: 30                                                  # Subcarrier spacing in kHz used for data.
   plmn: "00101"                                                   # PLMN broadcasted by the gNB.
   tac: 1                                                          # Tracking area code (needs to match the core configuration).
