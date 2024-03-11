@@ -20,6 +20,6 @@ ax = plt.subplot()
 data = map(lambda path: np.loadtxt(path, skiprows=1, usecols=(6), max_rows=NUM_ROWS, converters=conv), paths)
 ax.boxplot(list(data), labels=xlabels)
 ax.set_ylabel("Latência (ms)")
-ax.set_ylim((8, 32))
+#ax.set_ylim((8, 32))
 
 plt.show()
