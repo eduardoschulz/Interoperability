@@ -1,53 +1,44 @@
-# Configuration files for OPENAIRINTERFACE NR-5G
+# RANs
 
-## gNB
+## Open Air Interface 
+[OpenAirInteface](oai/README.md)
+For our testing it was used the tag 2023.w50.
+### How to Build
 
-```configfile
++ [UHD - Build Instructions](https://files.ettus.com/manual/page_build_guide.html)
++ [OAI - Build Instructions(No E2Agent)](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/BUILD.md)
++ [OAI - Build Instructions(Flexric)](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair2/E2AP/README.md)
 
-    amf_ip_address      = ( { ipv4       = "CHANGE for your ip addr to AMF";});
+#### Build with Flexric
+In this setup we have used oai built with the _--build-e2_ flag.
+```shell
 
-    NETWORK_INTERFACES :
-    {
-        GNB_INTERFACE_NAME_FOR_NG_AMF            = "CHANGE for your interface"; #eth0
-        GNB_IPV4_ADDRESS_FOR_NG_AMF              = "CHANGE for your ip addr"; #191.4.205.128/23
-        GNB_INTERFACE_NAME_FOR_NGU               = "CHANGE for your interface"; #eth0
-        GNB_IPV4_ADDRESS_FOR_NGU                 = "CHANGE for your ip addr"; #191.4.205.128/23
-        GNB_PORT_FOR_S1U                         = 2152; # Spec 2152
-    };
-```
+## 0.1 Building Swig
 
-## CU/DU Split
+$ git clone https://github.com/swig/swig.git && cd swig
+$ git checkout release-4.1
+$ ./autogen.sh
+$ ./configure --prefix=/usr/
+$ make -j12
+$ sudo make install
 
-### CU
+## 0.2 Required dependencies
 
-```configfile
+$ sudo apt install libsctp-dev python3 cmake-curses-gui libpcre2-dev
 
-    local_s_if_name = "CHANGE for your interface"; #lo
-    local_s_address = "CHANGE for your ip addr of preference"; #127.0.0.4
-    remote_s_address = "CHANGE for your DU ip addr"; #127.0.0.3
+## 1. Building OAI
 
-    amf_ip_address      = ( { ipv4       = "CHANGE for your ip addr to AMF";});
+$ git clone https://gitlab.eurecom.fr/oai/openairinterface5g oai
+$ cd oai
+$ git checkout 2023.w50
+$ ./build_oai -w USRP --gNB --nrUE --build-e2 --ninja
 
-    NETWORK_INTERFACES :
-    {
-        GNB_INTERFACE_NAME_FOR_NG_AMF            = "CHANGE for your interface"; #eth0
-        GNB_IPV4_ADDRESS_FOR_NG_AMF              = "CHANGE for your ip addr"; #191.4.205.128/23
-        GNB_INTERFACE_NAME_FOR_NGU               = "CHANGE for your interface"; #eth0
-        GNB_IPV4_ADDRESS_FOR_NGU                 = "CHANGE for your ip addr"; #191.4.205.128/23
-        GNB_PORT_FOR_S1U                         = 2152; # Spec 2152
-    };
+## 2. Building Flexric
 
-```
-### DU
-
-```configfile
-
-    local_s_if_name = "CHANGE for your interface"; #lo
-    local_s_address = "CHANGE for your ip addr of preference"; #127.0.0.3
-    remote_s_address = "CHANGE for your CU ip addr"; #127.0.0.4
+$ cd oai/openair2/E2AP/flexric
+$ mkdir build && cd build 
+$ cmake -D CMAKE_C_COMPILER=gcc-10 -D CMAKE_CXX_COMPILER=g++-10 ..
+$ make -j8
+$ sudo make install 
 
 ```
-
-
-
-
