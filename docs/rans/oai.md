@@ -1,6 +1,5 @@
-# RANs
+# OpenAirInterface
 
-## Open Air Interface 
 [OpenAirInteface](oai/README.md)
 For our testing we used the 2.1 release of the project.
 ### How to Build
@@ -21,7 +20,7 @@ $ git clone https://github.com/swig/swig.git && cd swig
 $ git checkout release-4.2
 $ ./autogen.sh
 $ ./configure --prefix=/usr/
-$ make -$(nproc)
+$ make -j$(nproc)
 $ sudo make install
 ```
 
@@ -45,6 +44,6 @@ $ ./build_oai -w USRP --gNB --nrUE --build-e2
 ```shell
 $ cd oai/openair2/E2AP/flexric
 $ cmake -DSWIG_DIR=/usr/share/swig/4.2.0/ -DSWIG_EXECUTABLE=/usr/bin/swig -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 ..
-$ make -j20
+$ make -j$(nproc)
 $ sudo make install 
 ```
