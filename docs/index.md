@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Interoperabilidade
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Sections:
 
-## Commands
+### RANs: 
+* [OpenAirInterface](rans/oai.md)
+* [srsRAN](rans/srsran.md)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### Core Network:
+* [Open5GS](core-network/open5gs.md)
+* [OpenAirInterface-CN](core-network/oaicn.md)
+* [Free5GC](core-network/free5gc.md)
 
-## Project layout
+### RICs:
+* [Flexric](rics/flexric.md)
+* [ORAN-SC](rics/oran-sc.md)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
