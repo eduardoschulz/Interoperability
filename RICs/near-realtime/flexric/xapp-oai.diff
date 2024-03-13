@@ -1,0 +1,50 @@
+diff --git a/examples/xApp/c/slice/xapp_slice_moni_ctrl.c b/examples/xApp/c/slice/xapp_slice_moni_ctrl.c
+index 1540c05d..1c399dd1 100644
+--- a/examples/xApp/c/slice/xapp_slice_moni_ctrl.c
++++ b/examples/xApp/c/slice/xapp_slice_moni_ctrl.c
+@@ -26,6 +26,7 @@
+ #include "../../../../src/sm/slice_sm/slice_sm_id.h"
+ 
+ #include <stdatomic.h>
++#include <stdint.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <time.h>
+@@ -226,6 +227,7 @@ slice_ctrl_req_data_t fill_slice_sm_ctrl_req(uint16_t ran_func_id, slice_ctrl_ms
+ 
+ int main(int argc, char *argv[])
+ {
++	int64_t diff;
+   fr_args_t args = init_fr_args(argc, argv);
+ 
+   //Init the xApp
+@@ -236,8 +238,9 @@ int main(int argc, char *argv[])
+   defer({ free_e2_node_arr_xapp(&nodes); });
+ 
+   assert(nodes.len > 0);
++	
+   printf("Connected E2 nodes len = %d\n", nodes.len);
+-
++	int64_t connE2_time = time_now_us();
+   // SLICE indication
+   const char* inter_t = "5_ms";
+   sm_ans_xapp_t* slice_handle = NULL;
+@@ -253,6 +256,9 @@ int main(int argc, char *argv[])
+       printf("Registered ran func id = %d \n ", n->rf[j].id);
+ 
+     slice_handle[i] = report_sm_xapp_api(&nodes.n[i].id, SM_SLICE_ID, (void*)inter_t, sm_cb_slice);
++		int64_t now = time_now_us();
++		printf("time_us_now: %ld\nDiff: %ldμs\n", now, now - connE2_time);
++		diff = now - connE2_time;
+     assert(slice_handle[i].success == true);
+     sleep(2);
+     
+@@ -292,6 +298,8 @@ int main(int argc, char *argv[])
+     usleep(1000);
+ 
+   printf("Test xApp run SUCCESSFULLY\n");
++	printf("Diff time between Connection and Subscription: %ldμs\n", diff);
++
+ }
+ 
+ 
