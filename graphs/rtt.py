@@ -4,7 +4,13 @@ import matplotlib as mpl
 import json
 
 mpl.use('QtAgg') 
-files = ["../logs/iperf-srsran.json", "../logs/iperf-oai.json"]
+files = ["../logs/oai/oai/iperf/oai-oaicn",
+         "../logs/oai/open5gs/iperf/oai-open5gs",
+         "../logs/oai/free5gc/iperf/20240304-oai-free5gc",
+         "../logs/",
+         "../logs/",
+         "../logs/",
+]
 labels = {
         "srsran-oai-rev": "SRSRAN (OAI CN)",
         "srsran-open5gs-rev": "SRSRAN (Open5Gs)",

@@ -1,0 +1,58 @@
+﻿"Time","recv br-0d249a6fe5fb","recv br-10cfd4613d3d","recv br-ec97404de1ef","recv br-free5gc","recv br01","recv docker0","recv enp3s0","recv oai-gnb","recv ogstun","recv virbr1","trans br-0d249a6fe5fb ","trans br-10cfd4613d3d ","trans br-ec97404de1ef ","trans br-free5gc ","trans br01 ","trans docker0 ","trans enp3s0 ","trans oai-gnb ","trans ogstun ","trans virbr1 "
+2024-03-05 15:38:00,,,,,23.5 kb/s,,25.0 kb/s,,0 b/s,0 b/s,,,,,2.36 kb/s,,2.82 kb/s,,0 b/s,0 b/s
+2024-03-05 15:38:15,,,,,30.6 kb/s,,32.9 kb/s,,0 b/s,0 b/s,,,,,1.23 kb/s,,1.48 kb/s,,0 b/s,0 b/s
+2024-03-05 15:38:30,,,,,23.1 kb/s,,24.6 kb/s,,0 b/s,0 b/s,,,,,1 kb/s,,1.45 kb/s,,0 b/s,0 b/s
+2024-03-05 15:38:45,,,,,30.7 kb/s,,34.0 kb/s,,0 b/s,0 b/s,,,,,954 b/s,,1.20 kb/s,,0 b/s,0 b/s
+2024-03-05 15:39:00,,,,,21.4 kb/s,,22.3 kb/s,,0 b/s,0 b/s,,,,,1.05 kb/s,,1.33 kb/s,,0 b/s,0 b/s
+2024-03-05 15:39:15,,,,,26.4 kb/s,,29.1 kb/s,,0 b/s,0 b/s,,,,,1.08 kb/s,,1.32 kb/s,,0 b/s,0 b/s
+2024-03-05 15:39:30,,,,,530 kb/s,,536 kb/s,,0 b/s,0 b/s,,,,,28.7 kb/s,,29.2 kb/s,,0 b/s,0 b/s
+2024-03-05 15:39:45,0 b/s,0 b/s,0 b/s,0 b/s,27.1 kb/s,0 b/s,30.1 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,1.10 kb/s,0 b/s,1.32 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:40:00,0 b/s,0 b/s,0 b/s,0 b/s,19.9 kb/s,0 b/s,21.1 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,1.50 kb/s,0 b/s,1.78 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:40:15,0 b/s,0 b/s,0 b/s,0 b/s,27.9 kb/s,0 b/s,31.1 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,935 b/s,0 b/s,1.16 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:40:30,0 b/s,0 b/s,0 b/s,0 b/s,19.7 kb/s,0 b/s,20.7 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,1.33 kb/s,0 b/s,1.61 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:40:45,0 b/s,0 b/s,0 b/s,0 b/s,27.7 kb/s,0 b/s,30.1 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,1.44 kb/s,0 b/s,1.84 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:41:00,0 b/s,0 b/s,0 b/s,0 b/s,203 kb/s,0 b/s,207 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,52.8 kb/s,0 b/s,53.1 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:41:15,0 b/s,0 b/s,0 b/s,0 b/s,37.4 Mb/s,0 b/s,38.6 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,128 kb/s,0 b/s,128 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:41:30,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,166 kb/s,0 b/s,166 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:41:45,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,179 kb/s,0 b/s,179 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:42:00,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,154 kb/s,0 b/s,155 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:42:15,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,154 kb/s,0 b/s,154 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:42:30,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,151 kb/s,0 b/s,151 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:42:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,6.44 Mb/s,0 b/s,6.44 Mb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:43:00,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,282 kb/s,0 b/s,282 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:43:15,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,286 kb/s,0 b/s,286 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:43:30,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,360 kb/s,0 b/s,360 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:43:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,523 kb/s,0 b/s,523 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:44:00,0 b/s,0 b/s,0 b/s,0 b/s,108 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,296 kb/s,0 b/s,297 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:44:15,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,306 kb/s,0 b/s,307 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:44:30,0 b/s,0 b/s,0 b/s,0 b/s,109 Mb/s,0 b/s,112 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,289 kb/s,0 b/s,289 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:44:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,289 kb/s,0 b/s,289 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:45:00,0 b/s,0 b/s,0 b/s,0 b/s,108 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,284 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:45:15,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:45:30,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,282 kb/s,0 b/s,282 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:45:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:46:00,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,282 kb/s,0 b/s,282 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:46:15,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,301 kb/s,0 b/s,301 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:46:30,0 b/s,0 b/s,0 b/s,0 b/s,108 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,282 kb/s,0 b/s,282 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:46:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,285 kb/s,0 b/s,285 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:47:00,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,281 kb/s,0 b/s,281 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:47:15,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,288 kb/s,0 b/s,288 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:47:30,0 b/s,0 b/s,0 b/s,0 b/s,108 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:47:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,284 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:48:00,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,282 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:48:15,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,108 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,285 kb/s,0 b/s,286 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:48:30,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,289 kb/s,0 b/s,289 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:48:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,280 kb/s,0 b/s,280 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:49:00,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,108 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,292 kb/s,0 b/s,292 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:49:15,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,281 kb/s,0 b/s,282 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:49:30,0 b/s,0 b/s,0 b/s,0 b/s,106 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,284 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:49:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,280 kb/s,0 b/s,280 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:50:00,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,287 kb/s,0 b/s,287 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:50:15,0 b/s,0 b/s,0 b/s,0 b/s,108 Mb/s,0 b/s,111 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,281 kb/s,0 b/s,281 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:50:30,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:50:45,0 b/s,0 b/s,0 b/s,0 b/s,107 Mb/s,0 b/s,110 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,283 kb/s,0 b/s,283 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:51:00,0 b/s,0 b/s,0 b/s,0 b/s,105 Mb/s,0 b/s,109 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,300 kb/s,0 b/s,301 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:51:15,0 b/s,0 b/s,0 b/s,0 b/s,67.8 Mb/s,0 b/s,70.0 Mb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,250 kb/s,0 b/s,250 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:51:30,0 b/s,0 b/s,0 b/s,0 b/s,72.4 kb/s,0 b/s,75.5 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,133 kb/s,0 b/s,133 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:51:45,0 b/s,0 b/s,0 b/s,0 b/s,72.4 kb/s,0 b/s,75.5 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,133 kb/s,0 b/s,133 kb/s,0 b/s,0 b/s,0 b/s
+2024-03-05 15:52:00,0 b/s,0 b/s,0 b/s,0 b/s,72.4 kb/s,0 b/s,75.5 kb/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,0 b/s,133 kb/s,0 b/s,133 kb/s,0 b/s,0 b/s,0 b/s

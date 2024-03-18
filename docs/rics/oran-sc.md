@@ -8,3 +8,53 @@ First things first install containerd, kubeadm and kubectl. The cluster configur
 
 
 <--! xApps built with docker need to be imported into containerd under the k8s.io namespace -->
+
+### Step by step kubernetes setup
+
+Create the kubernetes cluster using the (config.yaml)[RICs/near-realtime/oran-sc/config.yaml] provided.
+```bash
+kubeadm init --config config.yaml
+```
+
+Install flannel for networking to work
+```bash
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+```
+
+Create namespaces in kubernetes
+```bash
+kubectl create ns ricplt
+kubectl create ns ricxapp
+```
+
+Remove master taint so everything can run on the same machine
+```bash
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+```
+
+Clone O-RAN SCs `ric-dep` repository
+```bash
+git clone 
+```
+
+Start a chartsmuseum instance (this is a repository for helm charts).
+```bash
+chartmuseum --debug --port 6873 --storage local --storage-local-rootdir $HOME/helm/chartsmuseum/
+```
+
+Add the local museum to helm
+```bash
+helm repo add local http://localhost:6873/
+helm repo list
+```
+
+Build the helm charts and upload them to the local chartsmuseum
+```bash
+cd helm/charts
+make nearrtric
+```
+
+Install the RIC using the provided in the ric-dep repository
+```
+helm install nearrtric -n ricplt local/nearrtric -f RECIPE_EXAMPLE/example_recipe_oran_h_release.yaml
+```
