@@ -7,16 +7,18 @@ mpl.use('QtAgg')
 files = ["../logs/oai/oai/iperf/oai-oaicn",
          "../logs/oai/open5gs/iperf/oai-open5gs",
          "../logs/oai/free5gc/iperf/20240304-oai-free5gc",
-         "../logs/",
-         "../logs/",
-         "../logs/",
+         "../logs/srsran/oai/iperf/20240304-oai",
+         "../logs/srsran/open5gs/iperf/20240304",
+         "../logs/srsran/free5gc/iperf/20240304-free5gc"
 ]
-labels = {
-        "srsran-oai-rev": "SRSRAN (OAI CN)",
-        "srsran-open5gs-rev": "SRSRAN (Open5Gs)",
-        "oai-open5gs-rev": "OAI (Open5Gs)",
-        "oai-oai-rev": "OAI (OAI CN)",
-        }
+labels = [
+        "OAI (OAI CN)",
+        "OAI (Open5Gs)",
+        "OAI (Free5Gc)",
+        "SRSRAN (OAI CN)",
+        "SRSRAN (Open5Gs)",
+        "SRSRAN (Free5Gc)",
+]
 count = len(files)
 total_count = len(labels)
 ax = plt.subplot()
@@ -29,16 +31,16 @@ def conv(x):
 def from_iter(x):
     return [conv(t) for t in x['intervals']]
 
-ax.set_ylabel("Tempo de ida e volta (RTT) (ms)")
-ax.set_xlabel("Duração do teste (s)")
+ax.set_ylabel("Tempo de ida e volta (RTT) (ms)", fontsize=14)
+ax.set_xlabel("Pares de RAN e núcleo usados no teste", fontsize=14)
 
+datasets = []
 for i in range(count):
     with open(files[i], "r") as file:
         data = json.load(file)
-    for test in data:
-        if not test['title'].endswith('-rev'):
-            continue
-        ax.plot(from_iter(test), label=labels[test['title']])
-        ax.legend()
+    datasets.append(list(from_iter(data)))
+
+ax.boxplot(datasets)
+ax.set_xticklabels(labels=labels, fontsize=12)
 
 plt.show()
