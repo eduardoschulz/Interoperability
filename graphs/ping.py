@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
@@ -12,7 +11,6 @@ def conv(x: str):
 def read_file(path: str):
     with open(path, 'r') as f:
         t = filter(lambda l: l.startswith("64 bytes"), f.readlines())
-    print(len(list(t)))
     return list(map(lambda x: conv(x), t))
         
 

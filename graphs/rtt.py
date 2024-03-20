@@ -8,7 +8,7 @@ files = ["../logs/oai/oai/iperf/oai-oaicn",
          "../logs/oai/open5gs/iperf/oai-open5gs",
          "../logs/oai/free5gc/iperf/20240304-oai-free5gc",
          "../logs/srsran/oai/iperf/20240304-oai",
-         "../logs/srsran/open5gs/iperf/20240304",
+         "../logs/srsran/open5gs/iperf/20240320",
          "../logs/srsran/free5gc/iperf/20240304-free5gc"
 ]
 labels = [
