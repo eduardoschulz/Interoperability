@@ -20,8 +20,6 @@ git checkout v1.5.0
 git clone https://github.com/eduardoschulz/Interoperabilidade.git
 cd Interoperabilidade/core-networks/OAI-CN/
 
-rm -r ~/oai-cn5g-fed/docker-compose/database
-cp -r database ~/oai-cn5g-fed/docker-compose/database
 
 mv docker-compose-basic-nrf.yaml ~/oai-cn5g-fed/docker-compose/
 ```
@@ -66,6 +64,13 @@ INSERT INTO `SessionManagementSubscriptionData` (`ueid`, `servingPlmnid`, `singl
 ('001010123456789', '00101', '{\"sst\": 222, \"sd\": \"123\"}','{\"default\":{\"pduSessionTypes\":{ \"defaultSessionType\": \"IPV4\"},\"sscModes\": {\"defaultSscMode\": \"SSC_MODE_1\"},\"5gQosProfile\": {\"5qi\": 6,\"arp\":{\"priorityLevel\": 1,\"preemptCap\": \"NOT_PREEMPT\",\"preemptVuln\":\"NOT_PREEMPTABLE\"},\"priorityLevel\":1},\"sessionAmbr\":{\"uplink\":\"1000Mbps\", \"downlink\":\"1000Mbps\"},\"staticIpAddress\":[{\"ipv4Addr\": \"12.1.1.4\"}]}}');
 ```
 **The configuration above is only going to last until the core is restarted**. If you want to make this static you must make changes on the db files inside path/oaicn/docker-compose/databases/.
+
+If you want to use ours:
+
+```shell
+rm -r ~/oai-cn5g-fed/docker-compose/database
+cp -r database ~/oai-cn5g-fed/docker-compose/database
+```
 
 ## 3.0 More Information
 
