@@ -312,7 +312,7 @@
         
   
   <span class="md-ellipsis">
-    Cores
+    Core Networks
   </span>
   
 
@@ -333,7 +333,7 @@
         
   
   <span class="md-ellipsis">
-    Free5gc
+    Free5GC Core Network
   </span>
   
 
@@ -499,7 +499,7 @@
         
   
   <span class="md-ellipsis">
-    Open5gs
+    Open5gs Core Network
   </span>
   
 
@@ -932,8 +932,6 @@ git<span class="w"> </span>checkout<span class="w"> </span>v1.5.0
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/eduardoschulz/Interoperabilidade.git
 <span class="nb">cd</span><span class="w"> </span>Interoperabilidade/core-networks/OAI-CN/
 
-rm<span class="w"> </span>-r<span class="w"> </span>~/oai-cn5g-fed/docker-compose/database
-cp<span class="w"> </span>-r<span class="w"> </span>database<span class="w"> </span>~/oai-cn5g-fed/docker-compose/database
 
 mv<span class="w"> </span>docker-compose-basic-nrf.yaml<span class="w"> </span>~/oai-cn5g-fed/docker-compose/
 </code></pre></div>
@@ -968,6 +966,10 @@ password:<span class="w"> </span>linux<span class="w"> </span>
 <span class="p">(</span><span class="s1">&#39;001010123456789&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;00101&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{\&quot;sst\&quot;: 222, \&quot;sd\&quot;: \&quot;123\&quot;}&#39;</span><span class="p">,</span><span class="s1">&#39;{\&quot;default\&quot;:{\&quot;pduSessionTypes\&quot;:{ \&quot;defaultSessionType\&quot;: \&quot;IPV4\&quot;},\&quot;sscModes\&quot;: {\&quot;defaultSscMode\&quot;: \&quot;SSC_MODE_1\&quot;},\&quot;5gQosProfile\&quot;: {\&quot;5qi\&quot;: 6,\&quot;arp\&quot;:{\&quot;priorityLevel\&quot;: 1,\&quot;preemptCap\&quot;: \&quot;NOT_PREEMPT\&quot;,\&quot;preemptVuln\&quot;:\&quot;NOT_PREEMPTABLE\&quot;},\&quot;priorityLevel\&quot;:1},\&quot;sessionAmbr\&quot;:{\&quot;uplink\&quot;:\&quot;1000Mbps\&quot;, \&quot;downlink\&quot;:\&quot;1000Mbps\&quot;},\&quot;staticIpAddress\&quot;:[{\&quot;ipv4Addr\&quot;: \&quot;12.1.1.4\&quot;}]}}&#39;</span><span class="p">);</span>
 </code></pre></div>
 <strong>The configuration above is only going to last until the core is restarted</strong>. If you want to make this static you must make changes on the db files inside path/oaicn/docker-compose/databases/.</p>
+<p>If you want to use ours:</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-r<span class="w"> </span>~/oai-cn5g-fed/docker-compose/database
+cp<span class="w"> </span>-r<span class="w"> </span>database<span class="w"> </span>~/oai-cn5g-fed/docker-compose/database
+</code></pre></div>
 <h2 id="30-more-information">3.0 More Information</h2>
 <p><a href="https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed/-/blob/master/docs/DEPLOY_SA5G_BASIC_DEPLOYMENT.md">Basic Deployment using Docker Compose</a></p>
 
