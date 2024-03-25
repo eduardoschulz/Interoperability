@@ -47,3 +47,49 @@ $ cmake -DSWIG_DIR=/usr/share/swig/4.2.0/ -DSWIG_EXECUTABLE=/usr/bin/swig -DCMAK
 $ make -j$(nproc)
 $ sudo make install 
 ```
+
+## 3. Launching gNB
+
+### 3.1 gNB configuration
+
+First some modifications on the configuration file are required to make the gNB work properly. Some of the configurations bellow are optional depending on your setup.
+
+```shell
+$ cd /path-to/openairinterface5g/targets/PROJECTS/GENERIC-NR-5GC/CONF
+$ vi gnb.sa.band78.fr1.106PRB.usrpb210.conf #in this case we're using the usrp b210.
+```
+
+```config
+tracking_area_code  =  1;
+plmn_list = ({ mcc = 001; mnc = 01; mnc_length = 2; snssaiList = ({ sst = 1; }) }); #in this case we are using the test plmn 00101
+...
+min_rxtxtime = 6;
+...
+amf_ip_address      = ( { ipv4       = "191.4.205.169"; #change this to our amf ip; default for oai cn: 192.168.70.132
+                          ipv6       = "192:168:30::17";
+                          active     = "yes";
+                          preference = "ipv4";
+                        }
+                      );
+
+
+NETWORK_INTERFACES :
+    {
+        GNB_INTERFACE_NAME_FOR_NG_AMF            = "br01"; #change to our host machine network interface of choice
+        GNB_IPV4_ADDRESS_FOR_NG_AMF              = "191.4.204.211"; #change to the ip addr of the interface selected 
+        GNB_INTERFACE_NAME_FOR_NGU               = "br01"; #change to our host machine network interface of choice
+        GNB_IPV4_ADDRESS_FOR_NGU                 = "191.4.204.211"; #change to the ip addr of the interface selected 
+        GNB_PORT_FOR_S1U                         = 2152;
+    };
+...
+
+e2_agent = {
+    near_ric_ip_addr = "191.4.204.161" #change to to the ip addr of the ric. If you are running flexric locally --> 127.0.0.1
+    sm_dir = "/usr/local/lib/flexric/"
+};
+```
+### 3.2 Running nr-softmodem
+
+```shell
+$ sudo ./nr-softmodem -O /path-to/gnb.conf --sa -E --continuous-tx | tee oai.logs
+```
