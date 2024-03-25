@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../core-network/open5gs/">
+        <link rel="prev" href="../oaicn/">
       
       
-        <link rel="next" href="../srsran/">
+        <link rel="next" href="../../RANs/oai/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>OpenAirInterface - Interoperabilidade</title>
+        <title>Open5GS - Interoperabilidade</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openairinterface" class="md-skip">
+        <a href="#open5gs" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenAirInterface
+              Open5GS
             
           </span>
         </div>
@@ -268,34 +268,36 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Core network
+    Core Network
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Core network
+            Core Network
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-network/free5gc/" class="md-nav__link">
+      <a href="../free5gc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-network/oaicn/" class="md-nav__link">
+      <a href="../oaicn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -340,71 +342,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core-network/open5gs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Open5GS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Rans
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Rans
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -426,7 +363,7 @@
           
   
   <span class="md-ellipsis">
-    OpenAirInterface
+    Open5GS
   </span>
   
 
@@ -437,7 +374,7 @@
         
   
   <span class="md-ellipsis">
-    OpenAirInterface
+    Open5GS
   </span>
   
 
@@ -459,19 +396,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-build" class="md-nav__link">
+  <a href="#1-set-up" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Build
+      1. Set Up
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Build">
+    <nav class="md-nav" aria-label="1. Set Up">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#build-with-flexric" class="md-nav__link">
+  <a href="#11-core-host-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Build with Flexric
+      1.1 Core-host Configurations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-clone-free5gc-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Clone free5gc-compose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-changing-core-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Changing Core Settings
     </span>
   </a>
   
@@ -483,28 +438,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0-required-dependencies" class="md-nav__link">
+  <a href="#20-deploying-the-core-network" class="md-nav__link">
     <span class="md-ellipsis">
-      0. Required dependencies
+      2.0 Deploying the Core Network
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="0. Required dependencies">
+    <nav class="md-nav" aria-label="2.0 Deploying the Core Network">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#01-building-swig" class="md-nav__link">
+  <a href="#31-adding-ue-to-core-database" class="md-nav__link">
     <span class="md-ellipsis">
-      0.1 Building Swig
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#02-installing-other-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.2 Installing other dependencies
+      3.1 Adding UE to Core Database
     </span>
   </a>
   
@@ -516,53 +462,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-building-openairinterface" class="md-nav__link">
+  <a href="#40-more-information" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Building OpenAirInterface
+      4.0 More Information
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-building-flexric" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Building Flexric
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-launching-gnb" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Launching gNB
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Launching gNB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-gnb-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 gNB configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-running-nr-softmodem" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Running nr-softmodem
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -575,6 +479,48 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RANs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            RANs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -582,7 +528,28 @@
   
   
     <li class="md-nav__item">
-      <a href="../srsran/" class="md-nav__link">
+      <a href="../../RANs/oai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenAirInterface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RANs/srsran/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +591,7 @@
             
   
   <span class="md-ellipsis">
-    Rics
+    RICs
   </span>
   
 
@@ -634,7 +601,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Rics
+            RICs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -645,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rics/" class="md-nav__link">
+      <a href="../../RICs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rics/flexric/" class="md-nav__link">
+      <a href="../../RICs/flexric/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rics/oran-sc/" class="md-nav__link">
+      <a href="../../RICs/oran-sc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -708,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rics/rics/" class="md-nav__link">
+      <a href="../../RICs/rics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +717,7 @@
             
   
   <span class="md-ellipsis">
-    Ue
+    UE
   </span>
   
 
@@ -760,7 +727,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Ue
+            UE
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -771,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ue/simcard/" class="md-nav__link">
+      <a href="../../UE/simcard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,19 +786,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-build" class="md-nav__link">
+  <a href="#1-set-up" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Build
+      1. Set Up
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Build">
+    <nav class="md-nav" aria-label="1. Set Up">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#build-with-flexric" class="md-nav__link">
+  <a href="#11-core-host-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Build with Flexric
+      1.1 Core-host Configurations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-clone-free5gc-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Clone free5gc-compose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-changing-core-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Changing Core Settings
     </span>
   </a>
   
@@ -843,28 +828,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0-required-dependencies" class="md-nav__link">
+  <a href="#20-deploying-the-core-network" class="md-nav__link">
     <span class="md-ellipsis">
-      0. Required dependencies
+      2.0 Deploying the Core Network
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="0. Required dependencies">
+    <nav class="md-nav" aria-label="2.0 Deploying the Core Network">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#01-building-swig" class="md-nav__link">
+  <a href="#31-adding-ue-to-core-database" class="md-nav__link">
     <span class="md-ellipsis">
-      0.1 Building Swig
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#02-installing-other-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.2 Installing other dependencies
+      3.1 Adding UE to Core Database
     </span>
   </a>
   
@@ -876,53 +852,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-building-openairinterface" class="md-nav__link">
+  <a href="#40-more-information" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Building OpenAirInterface
+      4.0 More Information
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-building-flexric" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Building Flexric
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-launching-gnb" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Launching gNB
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Launching gNB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-gnb-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 gNB configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-running-nr-softmodem" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Running nr-softmodem
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -936,7 +870,7 @@
           
           
             <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="oai.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+              <article class="md-content__inner md-typeset">
                 
                   
 
@@ -944,79 +878,39 @@
   
 
 
-<h1 id="openairinterface">OpenAirInterface</h1>
-<p><a href="oai/README.md">OpenAirInteface</a>
-For our testing we used the 2.1 release of the project.</p>
-<h3 id="how-to-build">How to Build</h3>
+<h1 id="open5gs">Open5GS</h1>
+<h2 id="1-set-up">1. Set Up</h2>
+<p>In our test we used the version v2.7.0</p>
+<h3 id="11-core-host-configurations">1.1 Core-host Configurations</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>net.ipv4.conf.all.forwarding<span class="o">=</span><span class="m">1</span>
+sudo<span class="w"> </span>iptables<span class="w"> </span>-P<span class="w"> </span>FORWARD<span class="w"> </span>ACCEPT
+</code></pre></div>
+<h3 id="12-clone-free5gc-compose">1.2 Clone free5gc-compose</h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/herlesupreeth/docker_open5gs
+git<span class="w"> </span>checkout<span class="w"> </span>v2.7.0
+</code></pre></div>
+<h3 id="13-changing-core-settings">1.3 Changing Core Settings</h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/eduardoschulz/Interoperabilidade.git
+<span class="nb">cd</span><span class="w"> </span>Interoperabilidade/core-networks/OPEN5GS
+cp<span class="w"> </span>sa-deploy.yaml<span class="w"> </span>/path/to/docker_open5gs/.
+cp<span class="w"> </span>.env<span class="w"> </span>/path/to/docker_open5gs/.<span class="w"> </span>
+
+cp<span class="w"> </span>-r<span class="w"> </span>smf/<span class="w"> </span>/path/to/docker_open5gs/<span class="w"> </span><span class="c1">#here you need to modify your dnn </span>
+cp<span class="w"> </span>-r<span class="w"> </span>upf/<span class="w"> </span>/path/to/docker_open5gs/<span class="w"> </span><span class="c1">#same thing as above</span>
+</code></pre></div>
+<h2 id="20-deploying-the-core-network">2.0 Deploying the Core Network</h2>
 <ul>
-<li><a href="https://files.ettus.com/manual/page_build_guide.html">UHD - Build Instructions</a></li>
-<li><a href="https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/doc/BUILD.md">OAI - Build Instructions(No E2Agent)</a></li>
-<li><a href="https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair2/E2AP/README.md">OAI - Build Instructions(Flexric)</a></li>
+<li>To start the core
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>path-to/docker_open5gs
+docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>sa-deploy.yaml<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div></li>
+<li>To stop the core
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>
+</code></pre></div></li>
 </ul>
-<h4 id="build-with-flexric">Build with Flexric</h4>
-<p>In this setup we have used <strong>OpenAirInterface</strong> built with the <em>--build-e2</em> flag.</p>
-<h2 id="0-required-dependencies">0. Required dependencies</h2>
-<h3 id="01-building-swig">0.1 Building Swig</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/swig/swig.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>swig
-$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>release-4.2
-$<span class="w"> </span>./autogen.sh
-$<span class="w"> </span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr/
-$<span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
-$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install
-</code></pre></div>
-<h3 id="02-installing-other-dependencies">0.2 Installing other dependencies</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libsctp-dev<span class="w"> </span>python3<span class="w"> </span>cmake-curses-gui<span class="w"> </span>libpcre2-dev
-</code></pre></div>
-<h2 id="1-building-openairinterface">1. Building <strong>OpenAirInterface</strong></h2>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.eurecom.fr/oai/openairinterface5g<span class="w"> </span>oai
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oai
-$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>v2.1.0
-$<span class="w"> </span>./build_oai<span class="w"> </span>-w<span class="w"> </span>USRP<span class="w"> </span>--gNB<span class="w"> </span>--nrUE<span class="w"> </span>--build-e2<span class="w"> </span>
-</code></pre></div>
-<h2 id="2-building-flexric">2. Building Flexric</h2>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oai/openair2/E2AP/flexric
-$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-$<span class="w"> </span>cmake<span class="w"> </span>-DSWIG_DIR<span class="o">=</span>/usr/share/swig/4.2.0/<span class="w"> </span>-DSWIG_EXECUTABLE<span class="o">=</span>/usr/bin/swig<span class="w"> </span>-DCMAKE_C_COMPILER<span class="o">=</span>gcc-10<span class="w"> </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>g++-10<span class="w"> </span>..
-$<span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
-$<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> </span>
-</code></pre></div>
-<h2 id="3-launching-gnb">3. Launching gNB</h2>
-<h3 id="31-gnb-configuration">3.1 gNB configuration</h3>
-<p>First some modifications on the configuration file are required to make the gNB work properly. Some of the configurations bellow are optional depending on your setup.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path-to/openairinterface5g/targets/PROJECTS/GENERIC-NR-5GC/CONF
-$<span class="w"> </span>vi<span class="w"> </span>gnb.sa.band78.fr1.106PRB.usrpb210.conf<span class="w"> </span><span class="c1">#in this case we&#39;re using the usrp b210.</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>tracking_area_code  =  1;
-plmn_list = ({ mcc = 001; mnc = 01; mnc_length = 2; snssaiList = ({ sst = 1; }) }); #in this case we are using the test plmn 00101
-...
-min_rxtxtime = 6;
-...
-amf_ip_address      = ( { ipv4       = &quot;191.4.205.169&quot;; #change this to our amf ip; default for oai cn: 192.168.70.132
-                          ipv6       = &quot;192:168:30::17&quot;;
-                          active     = &quot;yes&quot;;
-                          preference = &quot;ipv4&quot;;
-                        }
-                      );
-
-
-NETWORK_INTERFACES :
-    {
-        GNB_INTERFACE_NAME_FOR_NG_AMF            = &quot;br01&quot;; #change to our host machine network interface of choice
-        GNB_IPV4_ADDRESS_FOR_NG_AMF              = &quot;191.4.204.211&quot;; #change to the ip addr of the interface selected 
-        GNB_INTERFACE_NAME_FOR_NGU               = &quot;br01&quot;; #change to our host machine network interface of choice
-        GNB_IPV4_ADDRESS_FOR_NGU                 = &quot;191.4.204.211&quot;; #change to the ip addr of the interface selected 
-        GNB_PORT_FOR_S1U                         = 2152;
-    };
-...
-
-e2_agent = {
-    near_ric_ip_addr = &quot;191.4.204.161&quot; #change to to the ip addr of the ric. If you are running flexric locally --&gt; 127.0.0.1
-    sm_dir = &quot;/usr/local/lib/flexric/&quot;
-};
-</code></pre></div>
-<h3 id="32-running-nr-softmodem">3.2 Running nr-softmodem</h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>./nr-softmodem<span class="w"> </span>-O<span class="w"> </span>/path-to/gnb.conf<span class="w"> </span>--sa<span class="w"> </span>-E<span class="w"> </span>--continuous-tx<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>oai.logs
-</code></pre></div>
+<h3 id="31-adding-ue-to-core-database">3.1 Adding UE to Core Database</h3>
+<p>To set up your UEs you'll need to go to the open5gs webpage on your machine. You should see a login screen when accessing http://<core-ip>:3000. The credentials are <strong>admin</strong> and the password is <strong>1423</strong>.</p>
+<h2 id="40-more-information">4.0 More Information</h2>
 
 
 
@@ -1034,12 +928,13 @@ e2_agent = {
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
-        <a href="mailto:eduardo.schulz@protonmail.com">Eduardo Schulz</a>
+        <a href="mailto:eduardo.schulz@protonmail.com">Eduardo Schulz</a>, 
+        <a href="mailto:33841225+eduardoschulz@users.noreply.github.com">Eduardo Schulz</a>
     </nav>
   </span>
 
