@@ -29,7 +29,7 @@ $ git clone https://gitlab.eurecom.fr/mosaic5g/flexric.git
 $ git checkout <*version>
 ```
 
-\*For an oai install refer back to [oai-flexric](/docs/rans/oai.md). More information can be found [at](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair2/E2AP/README.md).
+\*For an oai install refer back to [oai-flexric](/docs/RANs/oai.md). More information can be found [at](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair2/E2AP/README.md).
 
 ```shell
 $ cd flexric

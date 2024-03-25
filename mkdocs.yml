@@ -24,7 +24,6 @@ repo_url: https://github.com/eduardoschulz/Interoperabilidade
 plugins:
     - search
     - awesome-pages
-    - pdf-export
     - git-authors
 
 extra_javascript:

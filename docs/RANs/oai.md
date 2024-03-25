@@ -1,6 +1,5 @@
 # OpenAirInterface
 
-[OpenAirInteface](oai/README.md)
 For our testing we used the 2.1 release of the project.
 ### How to Build
 
