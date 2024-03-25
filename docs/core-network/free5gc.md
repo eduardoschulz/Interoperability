@@ -1,4 +1,4 @@
-# Free5GC Core Network
+# Free5GC
 
 ## 1. Set Up
 In our test we used the version v3.3.0.

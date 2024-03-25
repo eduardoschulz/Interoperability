@@ -1,4 +1,4 @@
-# OAI Core Network
+# OAI - Core Network
 
 ## 1. Set Up
 For our test the version 1.5.0 was used.

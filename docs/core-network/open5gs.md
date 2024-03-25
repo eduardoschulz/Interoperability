@@ -1,4 +1,4 @@
-# Open5gs Core Network
+# Open5GS
 
 ## 1. Set Up
 In our test we used the version v2.7.0

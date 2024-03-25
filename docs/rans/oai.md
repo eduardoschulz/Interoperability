@@ -43,6 +43,7 @@ $ ./build_oai -w USRP --gNB --nrUE --build-e2
 
 ```shell
 $ cd oai/openair2/E2AP/flexric
+$ mkdir build && cd build
 $ cmake -DSWIG_DIR=/usr/share/swig/4.2.0/ -DSWIG_EXECUTABLE=/usr/bin/swig -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 ..
 $ make -j$(nproc)
 $ sudo make install 
