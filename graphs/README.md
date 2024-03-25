@@ -1,7 +1,7 @@
 # Charts!
 
 This folders is dedicated to all the charts produced by the experiments. It 
-contains python scripts that a library called matplotlib to anylyze and draw 
+contains python scripts that a library called matplotlib to analyze and draw 
 the charts.
 
 ## Building the charts using our data!
