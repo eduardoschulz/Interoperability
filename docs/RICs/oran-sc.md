@@ -31,7 +31,7 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 
 Clone O-RAN SCs `ric-dep` repository
 ```bash
-git clone 
+git clone "https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep"
 ```
 
 Start a chartsmuseum instance (this is a repository for helm charts).
