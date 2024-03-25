@@ -1,44 +1,65 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import json
 
 mpl.use('QtAgg') 
-files = ["../logs/oai/oai/iperf/oai-oaicn",
-         "../logs/oai/open5gs/iperf/oai-open5gs",
-         "../logs/oai/free5gc/iperf/20240304-oai-free5gc",
-         "../logs/srsran/oai/iperf/20240304-oai",
-         "../logs/srsran/open5gs/iperf/20240304",
-         "../logs/srsran/free5gc/iperf/20240304-free5gc"
+files = [
+    #"../logs/oai/oai/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 15 53 24.csv", # core
+    "../logs/oai/oai/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 15 52 37.csv", # RAN
+    #"../logs/srsran/oai/iperf/core/Memory Basic-data-as-joinbyfield-2024-03-04 17 44 59.csv", # core
+    "../logs/srsran/oai/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 17 43 53.csv", # RAN
+    #"../logs/oai/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 16 21 22.csv", # core
+    "../logs/oai/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 16 21 00.csv", # RAN
+    #"../logs/srsran/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-20 17 22 53.csv", # core
+    "../logs/srsran/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-20 17 23 19.csv", # RAN
+    #"../logs/oai/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 44 19.csv", # core
+    "../logs/oai/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 45 26.csv", # RAN
+    #"../logs/srsran/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 13 53.csv", # core
+    "../logs/srsran/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 13 29.csv", # RAN
+]
+# how many samples to skip until the start of the experiment
+skip = [
+    14,    
+    10,
+    17,
+    13,
+    13,
+    18,
 ]
 labels = [
-        "OAI (OAI CN)",
-        "OAI (Open5Gs)",
-        "OAI (Free5Gc)",
-        "SRSRAN (OAI CN)",
-        "SRSRAN (Open5Gs)",
-        "SRSRAN (Free5Gc)",
+        "OAI CN",
+        "Open5Gs",
+        "Free5Gc",
 ]
-count = len(files)
-ax = plt.subplot()
+
+rans = ["OAI", "srsRAN"]
 
 def conv(x):
-    return float(x['sum']['bits_per_second'])/1_000_000
+    return float(x[:-4])
 
-def from_iter(x):
-    return np.fromiter(map(conv, x['intervals']), float)
+def readfile(file: str, skip: int):
+    data = np.genfromtxt(file, delimiter=",", skip_header=skip, max_rows=40, usecols=[2], converters={2: conv})
+    return np.average(data)
 
-ax.set_ylabel("Taxa de transferencia (Mbps)", fontsize=14)
-ax.set_xlabel("Pares de RAN e núcleo usados no teste", fontsize=14)
 
-dataset = []
-for i in range(count):
-    with open(files[i], "r") as file:
-        data = json.load(file)
-    dataset.append(list(from_iter(data)))
+x = np.arange(len(labels))  # the label locations
+width = 0.33  # the width of the bars
+multiplier = 0
 
-ax.boxplot(dataset)
-ax.set_xticklabels(labels, fontsize=12)
-ax.set_ylim((0,150))
+colors = ["#7EA16B", "#C3D898"]
+fig, ax = plt.subplots(layout='constrained')
+
+for i in range(len(rans)):
+    offset = width * multiplier
+    data = (readfile(files[i], skip[i]), readfile(files[i+2], skip[i+2]), readfile(files[i+4], skip[i+4]))
+    rects = ax.bar(x + offset, data, width, label=rans[i], color=colors[i])
+    ax.bar_label(rects, padding=2)
+    multiplier += 1
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('Consumo de mémoria na RAN (GB)', fontsize=14)
+ax.set_xticks(x + width/2, labels, fontsize=12)
+ax.set_ylim(0, 10)
+ax.legend(loc='upper right', ncols=2, fontsize=12)
 
 plt.show()
