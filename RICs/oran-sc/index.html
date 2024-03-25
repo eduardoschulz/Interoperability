@@ -849,7 +849,7 @@ kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> 
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>taint<span class="w"> </span>nodes<span class="w"> </span>--all<span class="w"> </span>node-role.kubernetes.io/control-plane-
 </code></pre></div></p>
 <p>Clone O-RAN SCs <code>ric-dep</code> repository
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep&quot;</span>
 </code></pre></div></p>
 <p>Start a chartsmuseum instance (this is a repository for helm charts).
 <div class="highlight"><pre><span></span><code>chartmuseum<span class="w"> </span>--debug<span class="w"> </span>--port<span class="w"> </span><span class="m">6873</span><span class="w"> </span>--storage<span class="w"> </span><span class="nb">local</span><span class="w"> </span>--storage-local-rootdir<span class="w"> </span><span class="nv">$HOME</span>/helm/chartsmuseum/
