@@ -11,7 +11,7 @@ files = [
     #"../logs/oai/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 16 21 22.csv", # core
     "../logs/oai/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 16 21 00.csv", # RAN
     #"../logs/srsran/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-20 17 22 53.csv", # core
-    "../logs/srsran/open5gs/iperf/Memory Basic-data-as-joinbyfield-2024-03-20 17 23 19.csv", # RAN
+    "../logs/srsran/open5gs/iperf/old/Memory Basic-data-as-joinbyfield-2024-03-04 16 58 29.csv", # RAN
     #"../logs/oai/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 44 19.csv", # core
     "../logs/oai/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 45 26.csv", # RAN
     #"../logs/srsran/free5gc/iperf/Memory Basic-data-as-joinbyfield-2024-03-04 18 13 53.csv", # core
