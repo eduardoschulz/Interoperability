@@ -554,6 +554,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-launching-gnb" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Launching gNB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Launching gNB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gnb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 gNB configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-running-nr-softmodem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Running nr-softmodem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -881,6 +914,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-launching-gnb" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Launching gNB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Launching gNB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-gnb-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 gNB configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-running-nr-softmodem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Running nr-softmodem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -933,6 +999,43 @@ $<span class="w"> </span>./build_oai<span class="w"> </span>-w<span class="w"> <
 $<span class="w"> </span>cmake<span class="w"> </span>-DSWIG_DIR<span class="o">=</span>/usr/share/swig/4.2.0/<span class="w"> </span>-DSWIG_EXECUTABLE<span class="o">=</span>/usr/bin/swig<span class="w"> </span>-DCMAKE_C_COMPILER<span class="o">=</span>gcc-10<span class="w"> </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>g++-10<span class="w"> </span>..
 $<span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
 $<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> </span>
+</code></pre></div>
+<h2 id="3-launching-gnb">3. Launching gNB</h2>
+<h3 id="31-gnb-configuration">3.1 gNB configuration</h3>
+<p>First some modifications on the configuration file are required to make the gNB work properly. Some of the configurations bellow are optional depending on your setup.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path-to/openairinterface5g/targets/PROJECTS/GENERIC-NR-5GC/CONF
+$<span class="w"> </span>vi<span class="w"> </span>gnb.sa.band78.fr1.106PRB.usrpb210.conf<span class="w"> </span><span class="c1">#in this case we&#39;re using the usrp b210.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>tracking_area_code  =  1;
+plmn_list = ({ mcc = 001; mnc = 01; mnc_length = 2; snssaiList = ({ sst = 1; }) }); #in this case we are using the test plmn 00101
+...
+min_rxtxtime = 6;
+...
+amf_ip_address      = ( { ipv4       = &quot;191.4.205.169&quot;; #change this to our amf ip; default for oai cn: 192.168.70.132
+                          ipv6       = &quot;192:168:30::17&quot;;
+                          active     = &quot;yes&quot;;
+                          preference = &quot;ipv4&quot;;
+                        }
+                      );
+
+
+NETWORK_INTERFACES :
+    {
+        GNB_INTERFACE_NAME_FOR_NG_AMF            = &quot;br01&quot;; #change to our host machine network interface of choice
+        GNB_IPV4_ADDRESS_FOR_NG_AMF              = &quot;191.4.204.211&quot;; #change to the ip addr of the interface selected 
+        GNB_INTERFACE_NAME_FOR_NGU               = &quot;br01&quot;; #change to our host machine network interface of choice
+        GNB_IPV4_ADDRESS_FOR_NGU                 = &quot;191.4.204.211&quot;; #change to the ip addr of the interface selected 
+        GNB_PORT_FOR_S1U                         = 2152;
+    };
+...
+
+e2_agent = {
+    near_ric_ip_addr = &quot;191.4.204.161&quot; #change to to the ip addr of the ric. If you are running flexric locally --&gt; 127.0.0.1
+    sm_dir = &quot;/usr/local/lib/flexric/&quot;
+};
+</code></pre></div>
+<h3 id="32-running-nr-softmodem">3.2 Running nr-softmodem</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>./nr-softmodem<span class="w"> </span>-O<span class="w"> </span>/path-to/gnb.conf<span class="w"> </span>--sa<span class="w"> </span>-E<span class="w"> </span>--continuous-tx<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>oai.logs
 </code></pre></div>
 
 
