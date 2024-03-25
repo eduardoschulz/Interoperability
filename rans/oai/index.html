@@ -12,7 +12,7 @@
         <link rel="prev" href="../../core-network/open5gs/">
       
       
-        <link rel="next" href="../rans/">
+        <link rel="next" href="../srsran/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -306,32 +306,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core-network/cores/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Core Networks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../core-network/free5gc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Free5GC Core Network
+    Free5GC
   </span>
   
 
@@ -352,7 +331,7 @@
         
   
   <span class="md-ellipsis">
-    OAI Core Network
+    OAI - Core Network
   </span>
   
 
@@ -373,7 +352,7 @@
         
   
   <span class="md-ellipsis">
-    Open5gs Core Network
+    Open5GS
   </span>
   
 
@@ -603,27 +582,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../rans/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RANs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../srsran/" class="md-nav__link">
         
   
@@ -692,6 +650,27 @@
   
   <span class="md-ellipsis">
     Non RealTime RIC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rics/flexric/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flexric
   </span>
   
 
@@ -996,6 +975,7 @@ $<span class="w"> </span>./build_oai<span class="w"> </span>-w<span class="w"> <
 </code></pre></div>
 <h2 id="2-building-flexric">2. Building Flexric</h2>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>oai/openair2/E2AP/flexric
+$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 $<span class="w"> </span>cmake<span class="w"> </span>-DSWIG_DIR<span class="o">=</span>/usr/share/swig/4.2.0/<span class="w"> </span>-DSWIG_EXECUTABLE<span class="o">=</span>/usr/bin/swig<span class="w"> </span>-DCMAKE_C_COMPILER<span class="o">=</span>gcc-10<span class="w"> </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>g++-10<span class="w"> </span>..
 $<span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span>
 $<span class="w"> </span>sudo<span class="w"> </span>make<span class="w"> </span>install<span class="w"> </span>
