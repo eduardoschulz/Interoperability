@@ -4,13 +4,33 @@ import matplotlib as mpl
 
 mpl.use('QtAgg') 
 files = [
-    "../logs/oai/free5gc/iperf/cpu-ran.csv",
-    "../logs/srsran/free5gc/iperf/cpu-ran.csv",
+    [
+        "../logs/oai/oai/iperf/cpu-ran.csv",
+        "../logs/srsran/oai/iperf/cpu-ran.csv",
+    ],
+    [
+        "../logs/oai/open5gs/iperf/cpu-ran.csv",
+        "../logs/srsran/open5gs/iperf/cpu-ran.csv",
+    ],
+    [
+        "../logs/oai/free5gc/iperf/cpu-ran.csv",
+        "../logs/srsran/free5gc/iperf/cpu-ran.csv",
+    ],
 ]
 # how many samples to skip until the start of the experiment
 skip = [
-    14,
-    19,
+    [
+        15,
+        10,
+    ],
+    [
+        19,
+        14,
+    ],
+    [
+        14,
+        19,
+    ],
 ]
 
 rans = ["OAI", "srsRAN"]
@@ -23,19 +43,22 @@ def readfile(file: str, skip: int):
     return data
 
 
+# there are 40 measurements total. They were taken every 15s
+# so in total the test lasted 600s
 x = np.arange(40) * 15 # the label locations
 
 colors = ["#7EA16B", "#C3D898"]
-fig, ax = plt.subplots(layout='constrained')
+fig, axes = plt.subplots(1, 3, layout='constrained')
 
-for i in range(len(rans)):
-    data = readfile(files[i], skip[i])
-    rects = ax.plot(x, data, label=rans[i], color=colors[i])
+for tests, offsets, ax in zip(files, skip, axes):
+    ax.set_ylim(0, 12)
+    for ran, color, test, offset in zip(rans, colors, tests, offsets):
+        data = readfile(test, offset)
+        rects = ax.plot(x, data, label=ran, color=color)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Consumo de CPU (%)', fontsize=14)
-ax.set_xlabel("Tempo (s)", fontsize=14)
-ax.set_ylim(0, 12)
+axes[0].set_ylabel('Consumo de CPU (%)', fontsize=14)
+axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
 ax.legend(loc='upper right', ncols=2, fontsize=12)
 
 plt.show()
