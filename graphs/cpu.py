@@ -35,6 +35,12 @@ skip = [
 
 rans = ["OAI", "srsRAN"]
 
+cores = [
+    "OAI CN",
+    "Open5Gs",
+    "Free5Gc",
+]
+
 def conv(x):
     return float(x[:-1])
 
@@ -50,15 +56,17 @@ x = np.arange(40) * 15 # the label locations
 colors = ["#7EA16B", "#C3D898"]
 fig, axes = plt.subplots(1, 3, layout='constrained')
 
-for tests, offsets, ax in zip(files, skip, axes):
+for tests, offsets, ax, core in zip(files, skip, axes, cores):
     ax.set_ylim(0, 12)
     for ran, color, test, offset in zip(rans, colors, tests, offsets):
         data = readfile(test, offset)
         rects = ax.plot(x, data, label=ran, color=color)
+    ax.set_xlabel(core, fontsize=12)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-axes[0].set_ylabel('Consumo de CPU (%)', fontsize=14)
-axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
-ax.legend(loc='upper right', ncols=2, fontsize=12)
+fig.supylabel('Consumo de CPU (%)', fontsize=14)
+#axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
+axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
+fig.supxlabel("Tempo (s)", fontsize=14)
 
 plt.show()

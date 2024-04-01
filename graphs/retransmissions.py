@@ -20,7 +20,7 @@ labels = [
 rans = ["OAI", "srsRAN"]
 
 def conv(x):
-    return x['end']['sum_sent']['retransmits']
+    return (x['end']['sum_sent']['retransmits'] * 1358) / x['end']['sum_sent']['bytes']
 
 def readfile(file):
     with open(file, "r") as file:
@@ -46,7 +46,7 @@ for i in range(len(rans)):
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Número de pacotes retransmitidos', fontsize=14)
 ax.set_xticks(x + width/2, labels, fontsize=12)
-ax.set_ylim(0, 3500)
+ax.set_ylim(0, 0.001)
 ax.legend(loc='upper right', ncols=2, fontsize=12)
 
 plt.show()

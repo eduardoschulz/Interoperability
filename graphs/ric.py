@@ -6,9 +6,9 @@ import json
 
 mpl.use('QtAgg') 
 files = [
-        "../logs/fake-oai-flexric.logs",
+        "../logs/oai-flexric-values-only.log",
         "../logs/srsran-flexric.logs",
-        "../logs/bouncer-values-only.log",
+        "../logs/fake-oai-flexric.logs",
 ]
 labels = [
         "Flexric",
