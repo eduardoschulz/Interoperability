@@ -2,13 +2,12 @@ from matplotlib.patches import Polygon
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import json
 
 mpl.use('QtAgg') 
 files = [
         "../logs/oai-flexric-values-only.log",
         "../logs/srsran-flexric.logs",
-        "../logs/fake-oai-flexric.logs",
+        "../logs/bouncer-values-only.log",
 ]
 labels = [
         "Flexric",
