@@ -20,7 +20,7 @@ rans = [
 ]
 limits = [
     (0, 4000),
-    (0, 1_200),
+    (100, 10000),
 ]
 
 ylabels = [
@@ -33,12 +33,17 @@ scaling_factor = [
     1_000,
 ]
 
+scales = [
+    'linear',
+    'log'
+]
+
 def build(save=True):
     fig, axes = plt.subplots(1, len(charts))
 
 
     colors = [["#7EA16B", "#C3D898",], ["#C3D898"],]
-    for files, ax, label, ran, color, limit, ylabel, sf in zip(charts, axes, labels, rans, colors, limits, ylabels, scaling_factor):
+    for files, ax, label, ran, color, limit, ylabel, sf, scale in zip(charts, axes, labels, rans, colors, limits, ylabels, scaling_factor, scales):
         dataset = []
         for file in files:
             with open(file, "r") as file:
@@ -52,6 +57,7 @@ def build(save=True):
         ax.set_xlabel(label, fontsize=14)
         ax.set_ylabel(ylabel, fontsize=14)
         ax.set_xticks([])
+        ax.set_yscale(scale)
 
     fig.tight_layout(pad=0.1)
 
