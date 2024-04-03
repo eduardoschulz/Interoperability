@@ -1,1 +1,3 @@
 graphs/venv/
+graphs/figs/
+graphs/__pycache__/

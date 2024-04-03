@@ -3,7 +3,6 @@ import numpy as np
 from matplotlib.patches import Polygon
 import matplotlib as mpl
 
-mpl.use('QtAgg') 
 NUM_ROWS = 600
 
 def conv(x: str):
@@ -30,30 +29,41 @@ labels = [
         "Free5Gc",
 ]
 rans = [
-        "OAI",
+        "OAI RAN",
         "srsRAN",
         "_OAI",
         "_srsRAN",
         "_OAI",
         "_srsRAN",
 ]
-count = len(paths)
 
-ax = plt.subplot()
+def build(save=True):
+    count = len(paths)
+
+    fig, ax = plt.subplots(1,1)
 
 
-dataset = list(map(lambda path: read_file(path), paths))
-ax.set_ylabel("Latência (ms)", fontsize=14)
-ax.set_ylim((0, 64))
-colors = ["#7EA16B", "#C3D898"]
-b = ax.boxplot(dataset, labels=rans, medianprops={"color": "#000000"})
-for i in range(len(b['boxes'])):
-    box = b['boxes'][i]
-    ax.add_patch(Polygon(box.get_xydata(), facecolor=colors[i%2], label=rans[i]))
+    dataset = list(map(lambda path: read_file(path), paths))
+    ax.set_ylabel("Latência (ms)", fontsize=16)
+    ax.set_ylim((0, 64))
+    colors = ["#7EA16B", "#C3D898"]
+    b = ax.boxplot(dataset, labels=rans, medianprops={"color": "#000000"})
+    for i in range(len(b['boxes'])):
+        box = b['boxes'][i]
+        ax.add_patch(Polygon(box.get_xydata(), facecolor=colors[i%2], label=rans[i]))
 
-x = np.arange(len(labels)) * 2 + 1.5
-ax.set_xticks(x, labels, fontsize=12)
+    x = np.arange(len(labels)) * 2 + 1.5
+    ax.set_xticks(x, labels, fontsize=16)
 
-ax.legend(loc='upper right', ncols=2, fontsize=12)
+    ax.legend(loc='upper right', ncols=2, fontsize=14)
 
-plt.show()
+    fig.set_size_inches(10.4, 4.2)
+    plt.tight_layout()
+#plt.show()
+    if save:
+        fig.savefig("figs/ping.pdf", dpi=100)
+
+if __name__ == "__main__":
+    build(False)
+    mpl.use('QtAgg') 
+    plt.show()

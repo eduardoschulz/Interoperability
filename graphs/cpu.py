@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-mpl.use('QtAgg') 
 files = [
     [
         "../logs/oai/oai/iperf/cpu-ran.csv",
@@ -33,7 +32,7 @@ skip = [
     ],
 ]
 
-rans = ["OAI", "srsRAN"]
+rans = ["OAI RAN", "srsRAN"]
 
 cores = [
     "OAI CN",
@@ -49,24 +48,34 @@ def readfile(file: str, skip: int):
     return data
 
 
-# there are 40 measurements total. They were taken every 15s
-# so in total the test lasted 600s
-x = np.arange(40) * 15 # the label locations
+def build(save=True):
+    # there are 40 measurements total. They were taken every 15s
+    # so in total the test lasted 600s
+    x = np.arange(40) * 15 # the label locations
 
-colors = ["#7EA16B", "#C3D898"]
-fig, axes = plt.subplots(1, 3, layout='constrained')
+    colors = ["#7EA16B", "#C3D898"]
+    fig, axes = plt.subplots(1, 3, layout='constrained')
 
-for tests, offsets, ax, core in zip(files, skip, axes, cores):
-    ax.set_ylim(0, 12)
-    for ran, color, test, offset in zip(rans, colors, tests, offsets):
-        data = readfile(test, offset)
-        rects = ax.plot(x, data, label=ran, color=color)
-    ax.set_xlabel(core, fontsize=12)
+    for tests, offsets, ax, core in zip(files, skip, axes, cores):
+        ax.set_ylim(0, 12)
+        for ran, color, test, offset in zip(rans, colors, tests, offsets):
+            data = readfile(test, offset)
+            rects = ax.plot(x, data, label=ran, color=color)
+        ax.set_xlabel(core, fontsize=12)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-fig.supylabel('Consumo de CPU (%)', fontsize=14)
+    fig.supylabel('Consumo de CPU (%)', fontsize=14)
 #axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
-axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
-fig.supxlabel("Tempo (s)", fontsize=14)
+    axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
+    fig.supxlabel("Tempo (s)", fontsize=14)
 
-plt.show()
+#fig.set_tight_layout()
+    fig.set_size_inches(10.4, 4.2)
+#plt.show()
+    if save:
+        fig.savefig("figs/cpu.pdf", dpi=100)
+
+if __name__ == "__main__":
+    build(False)
+    mpl.use('QtAgg') 
+    plt.show()

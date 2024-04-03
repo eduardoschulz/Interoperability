@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-mpl.use('QtAgg') 
 files = [
     #"../logs/oai/oai/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 15 53 24.csv", # core
     "../logs/oai/oai/iperf/Memory Basic-data-as-joinbyfield-2024-03-05 15 52 37.csv", # RAN
@@ -32,34 +31,48 @@ labels = [
         "Free5Gc",
 ]
 
-rans = ["OAI", "srsRAN"]
+rans = [
+        "OAI RAN", "srsRAN",
+        "_OAI", "_srsRAN",
+        "_OAI", "_srsRAN",
+]
 
 def conv(x):
     return float(x[:-4])
 
 def readfile(file: str, skip: int):
     data = np.genfromtxt(file, delimiter=",", skip_header=skip, max_rows=40, usecols=[2], converters={2: conv})
-    return np.average(data)
+    return (np.average(data), np.std(data))
 
 
-x = np.arange(len(labels))  # the label locations
-width = 0.33  # the width of the bars
-multiplier = 0
+def build(save=True):
+    x = np.arange(len(labels))
+    width = 0.33  # the width of the bars
+    multiplier = 0
 
-colors = ["#7EA16B", "#C3D898"]
-fig, ax = plt.subplots(layout='constrained')
+    colors = ["#7EA16B", "#C3D898"]
+    fig, ax = plt.subplots(layout='constrained')
 
-for i in range(len(rans)):
-    offset = width * multiplier
-    data = (readfile(files[i], skip[i]), readfile(files[i+2], skip[i+2]), readfile(files[i+4], skip[i+4]))
-    rects = ax.bar(x + offset, data, width, label=rans[i], color=colors[i])
-    ax.bar_label(rects, padding=2)
-    multiplier += 1
+    for i in range(len(files)):
+        offset = width * multiplier
+        data = readfile(files[i], skip[i])
+        rects = ax.bar(offset, data[0], width, yerr=data[1], label=rans[i], color=colors[i%2])
+        if i & 1 == 1:
+            multiplier += 1
+        multiplier += 1
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('Consumo de mémoria na RAN (GB)', fontsize=14)
-ax.set_xticks(x + width/2, labels, fontsize=12)
-ax.set_ylim(0, 10)
-ax.legend(loc='upper right', ncols=2, fontsize=12)
+    ax.set_ylabel('Consumo de Mémoria (GB)', fontsize=14)
+    ax.set_xticks(x + width/2, labels, fontsize=12)
+    ax.set_ylim(0, 10)
+    ax.legend(loc='upper right', ncols=2, fontsize=12)
 
-plt.show()
+#fig.set_tight_layout()
+    fig.set_size_inches(8, 4.2)
+#plt.show()
+    if save:
+        fig.savefig("figs/ram.pdf", dpi=100)
+if __name__ == "__main__":
+    build(False)
+    mpl.use('QtAgg') 
+    plt.show()

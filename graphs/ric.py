@@ -1,42 +1,66 @@
 from matplotlib.patches import Polygon
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-mpl.use('QtAgg') 
-files = [
+charts = [ 
+         [
         "../logs/oai-flexric-values-only.log",
         "../logs/srsran-flexric.logs",
-        "../logs/bouncer-values-only.log",
+        ],
+        ["../logs/bouncer-values-only.log",]
 ]
 labels = [
-        "Flexric",
         "Flexric",
         "ORAN SC RIC",
 ]
 rans = [
-        "OAI",
-        "srsRAN",
-        "_srsRAN",
+        ["OAI RAN",
+        "srsRAN",],
+        ["srsRAN",],
 ]
-count = len(files)
-ax = plt.subplot()
+limits = [
+    (0, 4000),
+    (0, 1_200),
+]
 
-ax.set_ylabel("Tempo de Resposta (us)", fontsize=14)
+ylabels = [
+    "Tempo de Resposta (μs)",
+    "Tempo de Resposta (ms)",
+]
 
-dataset = []
-for i in range(count):
-    with open(files[i], "r") as file:
-        data = map(lambda line: int(line[:-1]), file.readlines())
-    dataset.append(list(data))
+scaling_factor = [
+    1,
+    1_000,
+]
 
-colors = ["#7EA16B", "#C3D898", "#C3D898"]
-b = ax.boxplot(dataset, labels=rans, medianprops={"color": "#000000"})
-for box, color, ran in zip(b['boxes'], colors, rans):
-    ax.add_patch(Polygon(box.get_xydata(), facecolor=color, label=ran))
+def build(save=True):
+    fig, axes = plt.subplots(1, len(charts))
 
-x = np.arange(len(labels)) + 1
-ax.set_xticks(x, labels, fontsize=12)
-ax.legend(loc='upper right', ncols=2, fontsize=12)
 
-plt.show()
+    colors = [["#7EA16B", "#C3D898",], ["#C3D898"],]
+    for files, ax, label, ran, color, limit, ylabel, sf in zip(charts, axes, labels, rans, colors, limits, ylabels, scaling_factor):
+        dataset = []
+        for file in files:
+            with open(file, "r") as file:
+                data = map(lambda line: int(line[:-1])/sf, file.readlines())
+            dataset.append(list(data))
+        b = ax.boxplot(dataset, medianprops={"color": "#000000"}, widths=0.25*len(files))
+        for box, c, r in zip(b['boxes'], color, ran):
+            ax.add_patch(Polygon(box.get_xydata(), facecolor=c, label=r))
+        ax.legend(loc='upper right', ncols=2, fontsize=12)
+        ax.set_ylim(limit)
+        ax.set_xlabel(label, fontsize=14)
+        ax.set_ylabel(ylabel, fontsize=14)
+        ax.set_xticks([])
+
+    fig.tight_layout(pad=0.1)
+
+    fig.set_size_inches(8, 4.2)
+#plt.show()
+    if save:
+        fig.savefig("figs/ric.pdf", dpi=100)
+
+if __name__ == "__main__":
+    build(False)
+    mpl.use('QtAgg') 
+    plt.show()
