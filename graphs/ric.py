@@ -11,7 +11,7 @@ charts = [
 ]
 labels = [
         "Flexric",
-        "ORAN SC RIC",
+        "O-RAN SC RIC",
 ]
 rans = [
         ["OAI RAN",
@@ -20,7 +20,7 @@ rans = [
 ]
 limits = [
     (0, 4000),
-    (100, 10000),
+    (1, 10000),
 ]
 
 ylabels = [
