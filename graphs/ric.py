@@ -61,7 +61,7 @@ def build(save=True):
 
     fig.tight_layout(pad=0.1)
 
-    fig.set_size_inches(8, 4.2)
+    fig.set_size_inches(8, 4)
 #plt.show()
     if save:
         fig.savefig("figs/ric.pdf", dpi=100)

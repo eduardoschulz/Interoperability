@@ -68,7 +68,7 @@ def build(save=True):
     ax.legend(loc='upper right', ncols=2, fontsize=12)
 
 #fig.set_tight_layout()
-    fig.set_size_inches(8, 4.2)
+    fig.set_size_inches(8, 3.6)
 #plt.show()
     if save:
         fig.savefig("figs/ram.pdf", dpi=100)
