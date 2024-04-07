@@ -38,7 +38,7 @@ def build(save=True):
     count = len(files)
     total_count = len(labels)
     fig, ax = plt.subplots(1,1)
-    fig.supylabel("Tempo de Ida e Volta (ms)", fontsize=16)
+    fig.supylabel("RTT (ms)", fontsize=16)
 
     dataset = []
     for i in range(count):
