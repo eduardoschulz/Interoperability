@@ -25,8 +25,8 @@ paths = [
          ]
 labels = [
         "OAI CN",
-        "Open5Gs",
-        "Free5Gc",
+        "Open5GS",
+        "Free5GC",
 ]
 rans = [
         "OAI RAN",
