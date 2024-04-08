@@ -40,6 +40,8 @@ Remove master taint so everything can run on the same machine
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
 
+### Installing the Near-RT RIC
+
 Clone O-RAN SCs `ric-dep` repository
 ```bash
 git clone "https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep"
