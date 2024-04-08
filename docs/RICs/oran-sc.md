@@ -1,8 +1,8 @@
 # Near RealTime RIC
 
-## Installation
+## 1. Installation
 
-### Containerd and kubernetes (skip if already installed)
+### 1.1. Containerd and kubernetes (skip if already installed)
 
 First things first install containerd, kubeadm and kubectl. The cluster
 configuration passed to kubeadm is available
@@ -17,7 +17,7 @@ Note: This will install kubernetes using containerd instead of docker, so the
 cli for your containers is `ctr` and the namespace used by kubernetes is
 `k8s.io`
 
-### Step by step kubernetes setup
+### 1.2. Step by step kubernetes setup
 
 Create the kubernetes cluster using the [config.yaml](RICs/near-realtime/oran-sc/config.yaml) provided.
 ```bash
@@ -40,7 +40,7 @@ Remove master taint so everything can run on the same machine
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
 
-### Installing the Near-RT RIC
+### 1.3. Installing the Near-RT RIC
 
 Clone O-RAN SCs `ric-dep` repository
 ```bash
@@ -75,7 +75,7 @@ Install the RIC using the provided in the ric-dep repository
 helm install nearrtric -n ricplt local/nearrtric -f RECIPE_EXAMPLE/example_recipe_oran_h_release.yaml
 ```
 
-## Building xApps
+## 2. Building xApps
 
 Here are the instructions to build the modified version of the bouncer xApp
 used in tests (the one that works with srsRAN 23.10.1). First clone the
@@ -92,7 +92,7 @@ using docker and saves it to containerd internal repository. Building images
 with ctr is not possible at the moment. Once the image has finished build it
 is time to deploy it.
 
-## Deploying and managing xApps
+## 3. Deploying and managing xApps
 
 To deploy the container image, first clone the official appmgr repository from O-RAN.
 
@@ -145,3 +145,9 @@ kubectl scale --replicas=1 -n ricxapp deployment ricxapp-bouncer-xapp
 # stop xapp
 kubectl scale --replicas=0 -n ricxapp deployment ricxapp-bouncer-xapp
 ```
+
+Note: When developing or changing the code for the xApp you may need to update
+the running version of the container image. To do so re-build the image using
+the script as that will update the image in your local containerd repository.
+Then simply scale the xApp deployment down and up and the new version should be
+running. That will only work if the version stays the same.
