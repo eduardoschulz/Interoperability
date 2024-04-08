@@ -480,18 +480,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building" class="md-nav__link">
+  <a href="#1-building" class="md-nav__link">
     <span class="md-ellipsis">
-      Building
+      1. Building
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
+  <a href="#2-running" class="md-nav__link">
     <span class="md-ellipsis">
-      Running
+      2. Running
     </span>
   </a>
   
@@ -611,27 +611,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../RICs/rics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RAN Intelligent Controllers (RICs)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -729,18 +708,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#building" class="md-nav__link">
+  <a href="#1-building" class="md-nav__link">
     <span class="md-ellipsis">
-      Building
+      1. Building
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
+  <a href="#2-running" class="md-nav__link">
     <span class="md-ellipsis">
-      Running
+      2. Running
     </span>
   </a>
   
@@ -765,14 +744,14 @@
 
 
 <h1 id="srsran">SRSRAN</h1>
-<h2 id="building">Building</h2>
+<h2 id="1-building">1. Building</h2>
 <p>Version: 23.10.1
 UHD version: 4.6.0.0
 OS version: Ubuntu Server 22.04 LTS</p>
 <p>For building we recommend following the official documentation available <a href="https://docs.srsran.com/projects/project/en/latest/user_manuals/source/installation.html">here</a> to build srsRAN from source. The UHD driver was used and built from sources following <a href="https://files.ettus.com/manual/page_build_guide.html">this guide</a>.</p>
-<h2 id="running">Running</h2>
+<h2 id="2-running">2. Running</h2>
 <p>After building and installing srsRAN we recommend running the <a href="https://raw.githubusercontent.com/srsran/srsRAN_Project/release_23_10_1/scripts/srsran_performance">srsran_performance</a> script available in the official srsran_project repository. Since these changes do not persist remember to re-run them if the machine is restarted.</p>
-<p>For each of the core networks there is an accompanying helper script, however, you still need to manually change the second line of each script so that they have the name of your network interface.</p>
+<p>Watchout as srsRAN requires the bind address to be specified whenever trying to connect to an external machine.</p>
 <p>Finnaly, free5gc and OAI CN require a change in routing table of the gNB host. This change can be applied with the commands:
 - Free5Gc: <code>sudo ip route add 10.100.200.0/24 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.
 - OAI CN: <code>sudo ip route add 10.100.200.0/26 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.</p>
@@ -793,12 +772,13 @@ OS version: Ubuntu Server 22.04 LTS</p>
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
-        <a href="mailto:eduardo.schulz@protonmail.com">Eduardo Schulz</a>
+        <a href="mailto:eduardo.schulz@protonmail.com">Eduardo Schulz</a>, 
+        <a href="mailto:41166074+gckopper@users.noreply.github.com">gckopper</a>
     </nav>
   </span>
 

@@ -12,7 +12,7 @@
         <link rel="prev" href="../flexric/">
       
       
-        <link rel="next" href="../rics/">
+        <link rel="next" href="../../UE/simcard/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -585,37 +585,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#1-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      1. Installation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
+    <nav class="md-nav" aria-label="1. Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#containerd-and-kubernetes-skip-if-already-installed" class="md-nav__link">
+  <a href="#11-containerd-and-kubernetes-skip-if-already-installed" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerd and kubernetes (skip if already installed)
+      1.1. Containerd and kubernetes (skip if already installed)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-by-step-kubernetes-setup" class="md-nav__link">
+  <a href="#12-step-by-step-kubernetes-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Step by step kubernetes setup
+      1.2. Step by step kubernetes setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-the-near-rt-ric" class="md-nav__link">
+  <a href="#13-installing-the-near-rt-ric" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing the Near-RT RIC
+      1.3. Installing the Near-RT RIC
     </span>
   </a>
   
@@ -627,18 +627,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-xapps" class="md-nav__link">
+  <a href="#2-building-xapps" class="md-nav__link">
     <span class="md-ellipsis">
-      Building xApps
+      2. Building xApps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-and-managing-xapps" class="md-nav__link">
+  <a href="#3-deploying-and-managing-xapps" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying and managing xApps
+      3. Deploying and managing xApps
     </span>
   </a>
   
@@ -648,27 +648,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rics/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    RAN Intelligent Controllers (RICs)
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -771,37 +750,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#1-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      1. Installation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
+    <nav class="md-nav" aria-label="1. Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#containerd-and-kubernetes-skip-if-already-installed" class="md-nav__link">
+  <a href="#11-containerd-and-kubernetes-skip-if-already-installed" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerd and kubernetes (skip if already installed)
+      1.1. Containerd and kubernetes (skip if already installed)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-by-step-kubernetes-setup" class="md-nav__link">
+  <a href="#12-step-by-step-kubernetes-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Step by step kubernetes setup
+      1.2. Step by step kubernetes setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-the-near-rt-ric" class="md-nav__link">
+  <a href="#13-installing-the-near-rt-ric" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing the Near-RT RIC
+      1.3. Installing the Near-RT RIC
     </span>
   </a>
   
@@ -813,18 +792,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-xapps" class="md-nav__link">
+  <a href="#2-building-xapps" class="md-nav__link">
     <span class="md-ellipsis">
-      Building xApps
+      2. Building xApps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-and-managing-xapps" class="md-nav__link">
+  <a href="#3-deploying-and-managing-xapps" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying and managing xApps
+      3. Deploying and managing xApps
     </span>
   </a>
   
@@ -849,8 +828,8 @@
 
 
 <h1 id="near-realtime-ric">Near RealTime RIC</h1>
-<h2 id="installation">Installation</h2>
-<h3 id="containerd-and-kubernetes-skip-if-already-installed">Containerd and kubernetes (skip if already installed)</h3>
+<h2 id="1-installation">1. Installation</h2>
+<h3 id="11-containerd-and-kubernetes-skip-if-already-installed">1.1. Containerd and kubernetes (skip if already installed)</h3>
 <p>First things first install containerd, kubeadm and kubectl. The cluster
 configuration passed to kubeadm is available
 <a href="RICs/near-realtime/oran-sc/config.yaml">here</a> and the only required
@@ -862,7 +841,7 @@ hostname.</p>
 <p>Note: This will install kubernetes using containerd instead of docker, so the
 cli for your containers is <code>ctr</code> and the namespace used by kubernetes is
 <code>k8s.io</code></p>
-<h3 id="step-by-step-kubernetes-setup">Step by step kubernetes setup</h3>
+<h3 id="12-step-by-step-kubernetes-setup">1.2. Step by step kubernetes setup</h3>
 <p>Create the kubernetes cluster using the <a href="RICs/near-realtime/oran-sc/config.yaml">config.yaml</a> provided.
 <div class="highlight"><pre><span></span><code>kubeadm<span class="w"> </span>init<span class="w"> </span>--config<span class="w"> </span>config.yaml
 </code></pre></div></p>
@@ -876,7 +855,7 @@ kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> 
 <p>Remove master taint so everything can run on the same machine
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>taint<span class="w"> </span>nodes<span class="w"> </span>--all<span class="w"> </span>node-role.kubernetes.io/control-plane-
 </code></pre></div></p>
-<h3 id="installing-the-near-rt-ric">Installing the Near-RT RIC</h3>
+<h3 id="13-installing-the-near-rt-ric">1.3. Installing the Near-RT RIC</h3>
 <p>Clone O-RAN SCs <code>ric-dep</code> repository
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span><span class="s2">&quot;https://gerrit.o-ran-sc.org/r/ric-plt/ric-dep&quot;</span>
 </code></pre></div></p>
@@ -897,7 +876,7 @@ make<span class="w"> </span>nearrtric
 <p>Install the RIC using the provided in the ric-dep repository
 <div class="highlight"><pre><span></span><code>helm install nearrtric -n ricplt local/nearrtric -f RECIPE_EXAMPLE/example_recipe_oran_h_release.yaml
 </code></pre></div></p>
-<h2 id="building-xapps">Building xApps</h2>
+<h2 id="2-building-xapps">2. Building xApps</h2>
 <p>Here are the instructions to build the modified version of the bouncer xApp
 used in tests (the one that works with srsRAN 23.10.1). First clone the
 repository:
@@ -910,7 +889,7 @@ commit.</p>
 using docker and saves it to containerd internal repository. Building images
 with ctr is not possible at the moment. Once the image has finished build it
 is time to deploy it.</p>
-<h2 id="deploying-and-managing-xapps">Deploying and managing xApps</h2>
+<h2 id="3-deploying-and-managing-xapps">3. Deploying and managing xApps</h2>
 <p>To deploy the container image, first clone the official appmgr repository from O-RAN.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://gerrit.o-ran-sc.org/r/ric-plt/appmgr
 </code></pre></div>
@@ -943,6 +922,11 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>--replicas<span clas
 <span class="c1"># stop xapp</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span><span class="w"> </span>-n<span class="w"> </span>ricxapp<span class="w"> </span>deployment<span class="w"> </span>ricxapp-bouncer-xapp
 </code></pre></div>
+<p>Note: When developing or changing the code for the xApp you may need to update
+the running version of the container image. To do so re-build the image using
+the script as that will update the image in your local containerd repository.
+Then simply scale the xApp deployment down and up and the new version should be
+running. That will only work if the version stays the same.</p>
 
 
 
