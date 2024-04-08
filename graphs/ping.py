@@ -25,8 +25,8 @@ paths = [
          ]
 labels = [
         "OAI CN",
-        "Open5Gs",
-        "Free5Gc",
+        "Open5GS",
+        "Free5GC",
 ]
 rans = [
         "OAI RAN",
@@ -44,7 +44,7 @@ def build(save=True):
 
 
     dataset = list(map(lambda path: read_file(path), paths))
-    ax.set_ylabel("Latência (ms)", fontsize=16)
+    ax.set_ylabel("RTT (ms)", fontsize=16)
     ax.set_ylim((0, 64))
     colors = ["#7EA16B", "#C3D898"]
     b = ax.boxplot(dataset, labels=rans, medianprops={"color": "#000000"})

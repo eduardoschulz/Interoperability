@@ -36,8 +36,8 @@ rans = ["OAI RAN", "srsRAN"]
 
 cores = [
     "OAI CN",
-    "Open5Gs",
-    "Free5Gc",
+    "Open5GS",
+    "Free5GC",
 ]
 
 def conv(x):

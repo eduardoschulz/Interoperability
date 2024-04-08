@@ -11,7 +11,7 @@ charts = [
 ]
 labels = [
         "Flexric",
-        "ORAN SC RIC",
+        "O-RAN SC RIC",
 ]
 rans = [
         ["OAI RAN",
@@ -20,7 +20,7 @@ rans = [
 ]
 limits = [
     (0, 4000),
-    (100, 10000),
+    (1, 10000),
 ]
 
 ylabels = [
@@ -61,7 +61,7 @@ def build(save=True):
 
     fig.tight_layout(pad=0.1)
 
-    fig.set_size_inches(8, 4.2)
+    fig.set_size_inches(8, 4)
 #plt.show()
     if save:
         fig.savefig("figs/ric.pdf", dpi=100)
