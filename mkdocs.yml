@@ -24,7 +24,7 @@ repo_url: https://github.com/eduardoschulz/Interoperabilidade
 plugins:
     - search
     - awesome-pages
-    - git-authors
+
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
