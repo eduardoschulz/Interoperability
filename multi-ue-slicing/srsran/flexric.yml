@@ -1,0 +1,13 @@
+e2: 
+  enable_du_e2: 1                       # Optional BOOLEAN (0). Enables the DU E2 agent. Supported: [0, 1].
+  addr: 127.0.0.1                       # Optional TEXT. Sets the RIC IP address.
+  port: 36421                           # Optional UINT (36421). Sets the RIC Port. Supported: [20000 - 40000].
+  bind_addr:                            # Optional TEXT. Sets the local IP address to bind for RIC connection. Supported: IPv4 address.
+  sctp_rto_initial:                     # Optional INT. Sets the initial retransmission timeout when creating the SCTP connection.
+  sctp_rto_min:                         # Optional INT. Sets the minimum retransmission timeout for the SCTP connection.
+  sctp_rto_max:                         # Optional INT. Sets the maximum retransmission timeout for the SCTP connection.
+  sctp_initial_max_attempts:            # Optional INT. Sets the maximum retransmission attempts for the initial SCTP connection.
+  sctp_max_init_timeo:                  # Optional INT. Sets the maximum retransmission timeout for the initial SCTP connection.
+  e2sm_kpm_enabled: 0                   # Optional BOOLEAN (0). Enabled the E2SM KPM service module. Supported: [0, 1].
+  e2sm_rc_enabled: 1                    # Optional BOOLEAN (0). Enabled the E2SM RC service module. Supported: [0, 1].
+
