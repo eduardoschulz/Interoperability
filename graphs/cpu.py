@@ -64,10 +64,10 @@ def build(save=True):
         ax.set_xlabel(core, fontsize=12)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-    fig.supylabel('Consumo de CPU (%)', fontsize=14)
+    fig.supylabel('CPU Utilization (%)', fontsize=14)
 #axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
     axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
-    fig.supxlabel("Tempo (s)", fontsize=14)
+    fig.supxlabel("Time (s)", fontsize=14)
 
 #fig.set_tight_layout()
     fig.set_size_inches(10.4, 4.2)

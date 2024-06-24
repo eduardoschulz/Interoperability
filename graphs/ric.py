@@ -24,8 +24,8 @@ limits = [
 ]
 
 ylabels = [
-    "Tempo de Resposta (μs)",
-    "Tempo de Resposta (ms)",
+    "Response Time (μs)",
+    "Response Time (ms)",
 ]
 
 scaling_factor = [

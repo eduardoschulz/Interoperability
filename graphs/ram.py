@@ -62,7 +62,7 @@ def build(save=True):
         multiplier += 1
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Consumo de Mémoria (GB)', fontsize=14)
+    ax.set_ylabel('Memory Utilization (GB)', fontsize=14)
     ax.set_xticks(x + width/2, labels, fontsize=12)
     ax.set_ylim(0, 10)
     ax.legend(loc='upper right', ncols=2, fontsize=12)

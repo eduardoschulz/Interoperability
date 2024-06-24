@@ -34,7 +34,7 @@ def from_iter(x):
     return np.fromiter(map(conv, x['intervals']), float)
 
 def build(save=True):
-    ax.set_ylabel("Taxa de Transferência (Mbps)", fontsize=16)
+    ax.set_ylabel("Throughput Rate (Mbps)", fontsize=16)
 
     dataset = []
     for i in range(count):
