@@ -415,9 +415,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-clone-free5gc-compose" class="md-nav__link">
+  <a href="#12-clone-docker_open5gs" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Clone free5gc-compose
+      1.2 Clone docker_open5gs
     </span>
   </a>
   
@@ -784,9 +784,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-clone-free5gc-compose" class="md-nav__link">
+  <a href="#12-clone-docker_open5gs" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 Clone free5gc-compose
+      1.2 Clone docker_open5gs
     </span>
   </a>
   
@@ -864,7 +864,7 @@
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>net.ipv4.conf.all.forwarding<span class="o">=</span><span class="m">1</span>
 sudo<span class="w"> </span>iptables<span class="w"> </span>-P<span class="w"> </span>FORWARD<span class="w"> </span>ACCEPT
 </code></pre></div>
-<h3 id="12-clone-free5gc-compose">1.2 Clone free5gc-compose</h3>
+<h3 id="12-clone-docker_open5gs">1.2 Clone docker_open5gs</h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/herlesupreeth/docker_open5gs
 git<span class="w"> </span>checkout<span class="w"> </span>v2.7.0
 </code></pre></div>
@@ -890,6 +890,11 @@ docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> 
 <h3 id="31-adding-ue-to-core-database">3.1 Adding UE to Core Database</h3>
 <p>To set up your UEs you'll need to go to the open5gs webpage on your machine. You should see a login screen when accessing http://<core-ip>:3000. The credentials are <strong>admin</strong> and the password is <strong>1423</strong>.</p>
 <h2 id="40-more-information">4.0 More Information</h2>
+<p><a href="https://github.com/herlesupreeth/docker_open5gs">Open5GS - Docker</a>
+<a href="https://open5gs.org/open5gs/docs/">Open5GS - Documentation</a>
+<a href="https://github.com/open5gs/open5gs">Open5GS - Github Page</a>
+<a href="https://github.com/srsran/srsRAN_Project/tree/main/docker">srsRAN - Docker</a>;
+<a href="https://github.com/Gradiant/5g-charts/tree/main/charts/open5gs">Gradiant - Open5gs in k8s</a>.</p>
 
 
 
