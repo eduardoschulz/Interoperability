@@ -150,4 +150,4 @@ Note: When developing or changing the code for the xApp you may need to update
 the running version of the container image. To do so re-build the image using
 the script as that will update the image in your local containerd repository.
 Then simply scale the xApp deployment down and up and the new version should be
-running. That will only work if the version stays the same.
+running. This will only work if the version stays the same.
