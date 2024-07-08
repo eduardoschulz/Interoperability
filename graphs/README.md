@@ -15,4 +15,4 @@ you'll need to these steps:
 - Initiate a python virtual environment (optional, but recommend) with `python3 -m venv venv` (linux, mac) or `py -m venv venv` (windows)
 - Activate the virtual environment `source venv/bin/activate` (linux, mac) `.\venv\bin\activate.bat` (windows)
 - Install all dependencies with `pip install -r requirements.txt`
-- Build the desired chart with `python3 {filename}` (linux, mac) `py {filename}` (windows). All the files ending in `.py` inside the `graphs` folder are charts
+- Build the desired chart with `python3 {filename}` (linux, mac) `py {filename}` (windows). Or build all charts at once using the `build.py` script. All the files ending in `.py` (except `build.py`) inside the `graphs` folder are charts.
