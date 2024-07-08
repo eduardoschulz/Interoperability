@@ -10,7 +10,7 @@ sudo sysctl net.ipv4.conf.all.forwarding=1
 sudo iptables -P FORWARD ACCEPT
 ```
 
-### 1.2 Clone free5gc-compose
+### 1.2 Clone docker\_open5gs
 
 ```shell
 git clone https://github.com/herlesupreeth/docker_open5gs
@@ -45,4 +45,8 @@ docker compose down
 To set up your UEs you'll need to go to the open5gs webpage on your machine. You should see a login screen when accessing http://<core-ip>:3000. The credentials are **admin** and the password is **1423**.
 
 ## 4.0 More Information
-
+[Open5GS - Docker](https://github.com/herlesupreeth/docker_open5gs)
+[Open5GS - Documentation](https://open5gs.org/open5gs/docs/)
+[Open5GS - Github Page](https://github.com/open5gs/open5gs)
+[srsRAN - Docker](https://github.com/srsran/srsRAN_Project/tree/main/docker);
+[Gradiant - Open5gs in k8s](https://github.com/Gradiant/5g-charts/tree/main/charts/open5gs).
