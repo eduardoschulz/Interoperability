@@ -4,3 +4,4 @@ mkdocs-pdf-export-plugin
 mkdocs-git-authors-plugin
 mkdocs-awesome-pages-plugin
 python-markdown-math
+mkdocs-pdf
