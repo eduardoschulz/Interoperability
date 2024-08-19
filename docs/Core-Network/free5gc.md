@@ -15,6 +15,7 @@ sudo iptables -P FORWARD ACCEPT
 ```shell
 git clone https://github.com/free5gc/free5gc-compose
 git checkout v3.3.0
+git submodule update --init --recursive
 ```
 
 ### 1.3 Changing Core Settings
