@@ -1,16 +1,23 @@
 #!/bin/bash
 
 name=("Open5GS", "OAI", "Free5GC")
-start_cmd=("docker compose -f sa-deploy.yaml up -d" "docker compose up -d" "docker compose up -d")
-end_cmd=("docker compose -f sa-deploy.yaml down" "docker compose down" "docker compose down")
+start_cmd=("docker compose -f sa-deploy.yaml up -d" "python3 core-network.py --start-basic --scenario-1" "docker compose up -d")
+end_cmd=("docker compose -f sa-deploy.yaml down" "python3 core-network.py --stop-basic --scenario-1" "docker compose down")
 path=("/home/demo/docker_open5gs/" "/home/demo/oai-cn5g-fed/docker-compose/" "/home/demo/free5gc/free5gc-compose/")
+nrf_ips=("172.22.0.12" "192.168.70.130" "10.100.200.3")
+nrf_ports=("7777" "8080" "8000")
+nrf_path=("/nnrf-nfm/v1/nf-instances" "/nnrf-nfm/v1/nf-instances?nr-type=AMF" "/nnrf-disc/v1/nf-instances?targerequester-nf-type=SSS&t-nf-type=AMF")
 
 for (( i=0; i<${#name[*]}; ++i)); 
 do
     echo "Starting the ${name[$i]} core"
     ssh demo0 "cd ${path[$i]} && ${start_cmd[$i]}"
     # wait for the core to be ready
-    sleep 20
+    while [$(curl -s --http2-prior-knowledge -X GET "http://${nrf_ips[$i]}:${nrf_ports[$i]}${nrf_path[$i]}" | jq ._links.items[].href) -lt 1]
+    do
+        sleep 1
+    done
+
     echo "Starting the Iperf server"
     ssh demo2 iperf3 -s --json --logfile ${name[$i]} &
 
