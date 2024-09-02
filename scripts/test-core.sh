@@ -15,11 +15,12 @@ do
     # wait for the core to be ready
     while [$(curl -s --http2-prior-knowledge -X GET "http://${nrf_ips[$i]}:${nrf_ports[$i]}${nrf_path[$i]}" | jq ._links.items[].href) -lt 1]
     do
-        sleep 1
+        sleep 2
     done
 
     echo "Starting the Iperf server"
     ssh demo2 iperf3 -s --json --logfile ${name[$i]} &
+    read -p "Press Enter when the phone connects to the network" </dev/tty
 
     echo "Executing iperf3 test for 100s"
     ssh phone "./iperf3.sh 191.4.204.202 ${name[$i]} 100"
