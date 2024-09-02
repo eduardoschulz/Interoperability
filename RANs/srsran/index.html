@@ -772,9 +772,15 @@ OS version: Ubuntu Server 22.04 LTS</p>
 <h2 id="2-running">2. Running</h2>
 <p>After building and installing srsRAN we recommend running the <a href="https://raw.githubusercontent.com/srsran/srsRAN_Project/release_23_10_1/scripts/srsran_performance">srsran_performance</a> script available in the official srsran_project repository. Since these changes do not persist remember to re-run them if the machine is restarted.</p>
 <p>Watchout as srsRAN requires the bind address to be specified whenever trying to connect to an external machine.</p>
-<p>Finnaly, free5gc and OAI CN require a change in routing table of the gNB host. This change can be applied with the commands:
-- Free5Gc: <code>sudo ip route add 10.100.200.0/24 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.
-- OAI CN: <code>sudo ip route add 10.100.200.0/26 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.</p></div>
+<p>Finnaly, free5gc and OAI CN require a change in routing table of the gNB host. This change can be applied with the commands:</p>
+<ul>
+<li>
+<p>Free5Gc: <code>sudo ip route add 10.100.200.0/24 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.</p>
+</li>
+<li>
+<p>OAI CN: <code>sudo ip route add 10.100.200.0/26 via {external addr of the core host} dev {name of the network interface used to reach the core host}</code>.</p>
+</li>
+</ul></div>
 
 
 
