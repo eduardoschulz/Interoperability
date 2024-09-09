@@ -1,4 +1,4 @@
-# Interoperabilidade
+# Interoperability
 
 ## Sections:
 
