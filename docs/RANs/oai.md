@@ -88,8 +88,58 @@ e2_agent = {
     sm_dir = "/usr/local/lib/flexric/"
 };
 ```
-### 3.2 Running nr-softmodem
+### 3.2 Running nr-softmodem 
 
 ```shell
 $ sudo ./nr-softmodem -O /path-to/gnb.conf --sa -E --continuous-tx | tee oai.logs
+```
+
+### 4.0 F1 / 2 Split
+First step is to configure both the centralized unit and the distributed unit. The modified configuration that we used can be found [here](../../RANs/oai/f1-split/)
+
+#### 4.1 Configuration changes for the CU
+```conf
+...
+local_s_if_name = "enp3s0"; #set this to your network interface
+local_s_address = "191.4.205.149"; #use 127.0.0.4 with lo interface if trying to run both units in the same computer.
+remote_s_address = "191.4.204.52"; #if you are trying to run more than one DU set this to 0.0.0.0 (any).
+...
+amf_ip_address = ( {
+    ipv4 = "192.168.70.132";
+    ipv6 = "192:168:30::17";
+    active = "yes";
+    preference = "ipv4";
+});
+
+ NETWORK_INTERFACES :
+    {
+        GNB_INTERFACE_NAME_FOR_NG_AMF            = "enp3s0";
+        GNB_IPV4_ADDRESS_FOR_NG_AMF              = "191.4.205.149/23";
+        GNB_INTERFACE_NAME_FOR_NGU               = "enp3s0";
+        GNB_IPV4_ADDRESS_FOR_NGU                 = "191.4.205.149/23";
+        GNB_PORT_FOR_S1U                         = 2152; # Spec 2152
+    };
+  }
+```
+
+#### 4.2 Configuration changes for the DU
+
+```conf
+...
+gNB_ID = 0xe00; #should be the same as the one defined on CU config.
+gNB_DU_ID = 0xe00; #change this if running more than one DU.
+...
+//////// Physical parameters:
+min_rxtxtime = 6;
+...
+local_n_if_name = "enp3s0"; #change this to your interface of choice.
+local_n_address = "191.4.204.149"; #if running more than one DU change this to something different from the other DUs. 
+remote_n_address = "191.4.204.174"; #change this to your CU ip addr, if local 127.0.0.4.
+
+```
+#### 4.3 Launching both CU and DU
+```shell
+$ sudo ./nr-softmodem -O ~/cu.conf --sa -E --continuous-tx
+$ sudo ./nr-softmodem -O ~/du.conf --sa -E --continuous-tx
+
 ```
