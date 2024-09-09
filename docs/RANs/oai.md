@@ -95,7 +95,7 @@ $ sudo ./nr-softmodem -O /path-to/gnb.conf --sa -E --continuous-tx | tee oai.log
 ```
 
 ### 4.0 F1 / 2 Split
-First step is to configure both the centralized unit and the distributed unit. The modified configuration that we used can be found [here](../../RANs/oai/f1-split/)
+First step is to configure both the centralized unit and the distributed unit. The modified configuration that we used can be found [here](https://github.com/eduardoschulz/Interoperabilidade/tree/846d182e483d689ad29d454ea24c58d75e97748c/RANs/oai/f1-split)
 
 #### 4.1 Configuration changes for the CU
 ```conf
