@@ -1,4 +1,4 @@
-# Interoperabilidade
+# Interoperability
 
 ## Organization
 + [RANs](RANs/README.md) - Contains configurations and instructions for Open Air Interface and srsRAN.
