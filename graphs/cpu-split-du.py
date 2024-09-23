@@ -4,31 +4,16 @@ import matplotlib as mpl
 
 files = [
     [
-        "../logs/oai/oai/iperf/cpu-ran.csv",
-        "../logs/srsran/oai/iperf/cpu-ran.csv",
+        "../logs/oai/oaicn/split/cpu-du.csv",
+        "../logs/srsran/oaicn/split/cpu-du.csv",
     ],
     [
-        "../logs/oai/open5gs/iperf/cpu-ran.csv",
-        "../logs/srsran/open5gs/iperf/cpu-ran.csv",
+        "../logs/oai/open5gs/split/cpu-du.csv",
+        "../logs/srsran/open5gs/split/cpu-du.csv",
     ],
     [
-        "../logs/oai/free5gc/iperf/cpu-ran.csv",
-        "../logs/srsran/free5gc/iperf/cpu-ran.csv",
-    ],
-]
-# how many samples to skip until the start of the experiment
-skip = [
-    [
-        15,
-        10,
-    ],
-    [
-        19,
-        14,
-    ],
-    [
-        14,
-        19,
+        "../logs/oai/free5gc/split/cpu-du.csv",
+        "../logs/srsran/free5gc/split/cpu-du.csv",
     ],
 ]
 
@@ -41,25 +26,25 @@ cores = [
 ]
 
 def conv(x):
-    return float(x[:-1])
+    return float(x)*100
 
-def readfile(file: str, skip: int):
-    data = np.genfromtxt(file, delimiter=",", skip_header=skip, max_rows=40, usecols=[2], converters={2: conv})
+def readfile(file: str):
+    data = np.genfromtxt(file, delimiter=",", max_rows=11, usecols=[2], converters={2: conv})
     return data
 
 
 def build(save=True):
     # there are 40 measurements total. They were taken every 15s
     # so in total the test lasted 600s
-    x = np.arange(40) * 15 # the label locations
+    x = np.arange(11) * 30 # the label locations
 
     colors = ["#7EA16B", "#C3D898"]
     fig, axes = plt.subplots(1, 3, layout='constrained')
 
-    for tests, offsets, ax, core in zip(files, skip, axes, cores):
-        ax.set_ylim(0, 12)
-        for ran, color, test, offset in zip(rans, colors, tests, offsets):
-            data = readfile(test, offset)
+    for tests, ax, core in zip(files, axes, cores):
+        ax.set_ylim(0, 16)
+        for ran, color, test in zip(rans, colors, tests):
+            data = readfile(test)
             rects = ax.plot(x, data, label=ran, color=color)
         ax.set_xlabel(core, fontsize=12)
 
