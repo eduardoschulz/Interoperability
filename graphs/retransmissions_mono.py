@@ -43,14 +43,14 @@ def build(save=True):
         multiplier += 1
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Taxa Retransmissão de Pacotes (%)', fontsize=14)
+    ax.set_ylabel('Packet retransmission rate (%)', fontsize=14)
     ax.set_xticks(x + width/2, labels, fontsize=12)
     ax.set_ylim(0, 0.0035)
     ax.legend(loc='upper right', ncols=2, fontsize=12)
     fig.set_size_inches(8, 4.2)
 #plt.show()
     if save:
-        fig.savefig("figs/retrans.pdf", dpi=100)
+        fig.savefig("figs/retrans-mono.pdf", dpi=100)
 
 if __name__ == "__main__":
     build(False)

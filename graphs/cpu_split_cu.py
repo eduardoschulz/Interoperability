@@ -49,7 +49,7 @@ def build(save=True):
         ax.set_xlabel(core, fontsize=12)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-    fig.supylabel('CPU Utilization (%)', fontsize=14)
+    fig.supylabel('CU CPU Utilization (%)', fontsize=14)
 #axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
     axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
     fig.supxlabel("Time (s)", fontsize=14)
@@ -58,7 +58,7 @@ def build(save=True):
     fig.set_size_inches(10.4, 4.2)
 #plt.show()
     if save:
-        fig.savefig("figs/cpu.pdf", dpi=100)
+        fig.savefig("figs/cpu-split-cu.pdf", dpi=100)
 
 if __name__ == "__main__":
     build(False)

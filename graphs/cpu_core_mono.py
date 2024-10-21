@@ -4,16 +4,16 @@ import matplotlib as mpl
 
 files = [
     [
-        "../logs/oai/oaicn/mono/cpu-gnb.csv",
-        "../logs/srsran/oaicn/mono/cpu-gnb.csv",
+        "../logs/oai/oaicn/mono/cpu.csv",
+        "../logs/srsran/oaicn/mono/cpu.csv",
     ],
     [
-        "../logs/oai/open5gs/mono/cpu-gnb.csv",
-        "../logs/srsran/open5gs/mono/cpu-gnb.csv",
+        "../logs/oai/open5gs/mono/cpu.csv",
+        "../logs/srsran/open5gs/mono/cpu.csv",
     ],
     [
-        "../logs/oai/free5gc/mono/cpu-gnb.csv",
-        "../logs/srsran/free5gc/mono/cpu-gnb.csv",
+        "../logs/oai/free5gc/mono/cpu.csv",
+        "../logs/srsran/free5gc/mono/cpu.csv",
     ],
 ]
 
@@ -42,14 +42,14 @@ def build(save=True):
     fig, axes = plt.subplots(1, 3, layout='constrained')
 
     for tests, ax, core in zip(files, axes, cores):
-        ax.set_ylim(0, 16)
+        ax.set_ylim(0, 8)
         for ran, color, test in zip(rans, colors, tests):
             data = readfile(test)
             rects = ax.plot(x, data, label=ran, color=color)
         ax.set_xlabel(core, fontsize=12)
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-    fig.supylabel('CPU Utilization (%)', fontsize=14)
+    fig.supylabel('Core CPU Utilization (%)', fontsize=14)
 #axes[len(axes)//2].set_xlabel("Tempo (s)", fontsize=14)
     axes[-1].legend(loc='upper right', ncols=2, fontsize=12)
     fig.supxlabel("Time (s)", fontsize=14)
@@ -58,7 +58,7 @@ def build(save=True):
     fig.set_size_inches(10.4, 4.2)
 #plt.show()
     if save:
-        fig.savefig("figs/cpu.pdf", dpi=100)
+        fig.savefig("figs/cpu-mono.pdf", dpi=100)
 
 if __name__ == "__main__":
     build(False)

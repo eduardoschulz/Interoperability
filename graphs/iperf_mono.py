@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import json
 
-files = ["../logs/oai/oaicn/split/iperf.json",
-         "../logs/srsran/oaicn/split/iperf.json",
-         "../logs/oai/open5gs/split/iperf.json",
-         "../logs/srsran/open5gs/split/iperf.json",
-         "../logs/oai/free5gc/split/iperf.json",
-         "../logs/srsran/free5gc/split/iperf.json",
+files = ["../logs/oai/oaicn/mono/iperf.json",
+         "../logs/srsran/oaicn/mono/iperf.json",
+         "../logs/oai/open5gs/mono/iperf.json",
+         "../logs/srsran/open5gs/mono/iperf.json",
+         "../logs/oai/free5gc/mono/iperf.json",
+         "../logs/srsran/free5gc/mono/iperf.json",
 ]
 labels = [
         "OAI CN",
@@ -57,7 +57,7 @@ def build(save=True):
     plt.tight_layout()
 #plt.show()
     if save:
-        fig.savefig("figs/iperf.pdf", dpi=100)
+        fig.savefig("figs/iperf-mono.pdf", dpi=100)
 
 if __name__ == "__main__":
     build(save=False)
